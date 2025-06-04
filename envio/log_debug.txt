@@ -1,0 +1,1241 @@
+
+📥 Nueva solicitud POST - 2025-05-30 08:01:50
+✅ Pago registrado correctamente con ID: 18 y estado: completado
+✅ Pago marcado como COMPLETADO
+⚠️ Carrito vacío o no definido
+✅ Redirigiendo a pago_exitoso
+
+📥 Nueva solicitud POST - 2025-05-30 08:06:42
+✅ Pago registrado correctamente con ID: 19 y estado: completado
+🔍 ID Pedido recibido: 56
+🛒 Contenido del carrito:
+
+✅ Pago marcado como COMPLETADO
+⚠️ Carrito vacío o no definido
+✅ Redirigiendo a pago_exitoso
+
+📥 Nueva solicitud POST - 2025-05-30 08:40:08
+✅ Pago registrado correctamente con ID: 20 y estado: completado
+🔍 ID Pedido recibido: 60
+🛒 Contenido del carrito:
+Array
+(
+    [0] => Array
+        (
+            [id_detalles_productos] => 47
+            [name] => Blusa “Corte Moderno” - Azul Marino - Talla L
+            [price] => 148000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/blusas/lu4-2.png
+        )
+
+    [1] => Array
+        (
+            [id_detalles_productos] => 27
+            [name] => Blusa “Línea Elegante” - Blanco - Talla L
+            [price] => 155000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/blusas/lu3.png
+        )
+
+)
+
+✅ Pago marcado como COMPLETADO
+🛒 Carrito contiene: Array
+(
+    [0] => Array
+        (
+            [id_detalles_productos] => 47
+            [name] => Blusa “Corte Moderno” - Azul Marino - Talla L
+            [price] => 148000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/blusas/lu4-2.png
+        )
+
+    [1] => Array
+        (
+            [id_detalles_productos] => 27
+            [name] => Blusa “Línea Elegante” - Blanco - Talla L
+            [price] => 155000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/blusas/lu3.png
+        )
+
+)
+
+
+📥 Nueva solicitud POST - 2025-05-30 08:43:14
+✅ Pago registrado correctamente con ID: 21 y estado: completado
+🔍 ID Pedido recibido: 60
+🛒 Contenido del carrito:
+Array
+(
+    [0] => Array
+        (
+            [id_detalles_productos] => 47
+            [name] => Blusa “Corte Moderno” - Azul Marino - Talla L
+            [price] => 148000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/blusas/lu4-2.png
+        )
+
+    [1] => Array
+        (
+            [id_detalles_productos] => 27
+            [name] => Blusa “Línea Elegante” - Blanco - Talla L
+            [price] => 155000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/blusas/lu3.png
+        )
+
+)
+
+✅ Pago marcado como COMPLETADO
+🛒 Carrito contiene: Array
+(
+    [0] => Array
+        (
+            [id_detalles_productos] => 47
+            [name] => Blusa “Corte Moderno” - Azul Marino - Talla L
+            [price] => 148000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/blusas/lu4-2.png
+        )
+
+    [1] => Array
+        (
+            [id_detalles_productos] => 27
+            [name] => Blusa “Línea Elegante” - Blanco - Talla L
+            [price] => 155000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/blusas/lu3.png
+        )
+
+)
+
+
+📥 Nueva solicitud POST - 2025-05-30 08:44:14
+✅ Pago registrado correctamente con ID: 22 y estado: completado
+🔍 ID Pedido recibido: 60
+🛒 Contenido del carrito:
+Array
+(
+    [0] => Array
+        (
+            [id_detalles_productos] => 47
+            [name] => Blusa “Corte Moderno” - Azul Marino - Talla L
+            [price] => 148000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/blusas/lu4-2.png
+        )
+
+    [1] => Array
+        (
+            [id_detalles_productos] => 27
+            [name] => Blusa “Línea Elegante” - Blanco - Talla L
+            [price] => 155000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/blusas/lu3.png
+        )
+
+)
+
+✅ Pago marcado como COMPLETADO
+🛒 Carrito contiene: Array
+(
+    [0] => Array
+        (
+            [id_detalles_productos] => 47
+            [name] => Blusa “Corte Moderno” - Azul Marino - Talla L
+            [price] => 148000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/blusas/lu4-2.png
+        )
+
+    [1] => Array
+        (
+            [id_detalles_productos] => 27
+            [name] => Blusa “Línea Elegante” - Blanco - Talla L
+            [price] => 155000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/blusas/lu3.png
+        )
+
+)
+
+📝 Detalle insertado: Producto 47, Cantidad 1, Subtotal 148000
+📦 Stock actualizado para producto 47, -1 unidades
+📝 Detalle insertado: Producto 27, Cantidad 1, Subtotal 155000
+📦 Stock actualizado para producto 27, -1 unidades
+✅ Redirigiendo a pago_exitoso
+
+📥 Nueva solicitud POST - 2025-05-30 08:45:48
+✅ Pago registrado correctamente con ID: 23 y estado: completado
+🔍 ID Pedido recibido: 61
+🛒 Contenido del carrito:
+Array
+(
+    [0] => Array
+        (
+            [id_detalles_productos] => 47
+            [name] => Blusa “Corte Moderno” - Azul Marino - Talla L
+            [price] => 148000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/blusas/lu4-2.png
+        )
+
+    [1] => Array
+        (
+            [id_detalles_productos] => 27
+            [name] => Blusa “Línea Elegante” - Blanco - Talla L
+            [price] => 155000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/blusas/lu3.png
+        )
+
+)
+
+✅ Pago marcado como COMPLETADO
+🛒 Carrito contiene: Array
+(
+    [0] => Array
+        (
+            [id_detalles_productos] => 47
+            [name] => Blusa “Corte Moderno” - Azul Marino - Talla L
+            [price] => 148000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/blusas/lu4-2.png
+        )
+
+    [1] => Array
+        (
+            [id_detalles_productos] => 27
+            [name] => Blusa “Línea Elegante” - Blanco - Talla L
+            [price] => 155000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/blusas/lu3.png
+        )
+
+)
+
+📝 Detalle insertado: Producto 47, Cantidad 1, Subtotal 148000
+📦 Stock actualizado para producto 47, -1 unidades
+📝 Detalle insertado: Producto 27, Cantidad 1, Subtotal 155000
+📦 Stock actualizado para producto 27, -1 unidades
+✅ Redirigiendo a pago_exitoso
+
+📥 Nueva solicitud POST - 2025-05-30 09:14:35
+✅ Pago registrado correctamente con ID: 24 y estado: completado
+🔍 ID Pedido recibido: 62
+🛒 Contenido del carrito:
+Array
+(
+    [0] => Array
+        (
+            [id_detalles_productos] => 47
+            [name] => Blusa “Corte Moderno” - Azul Marino - Talla L
+            [price] => 148000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/blusas/lu4-2.png
+        )
+
+    [1] => Array
+        (
+            [id_detalles_productos] => 27
+            [name] => Blusa “Línea Elegante” - Blanco - Talla L
+            [price] => 155000
+            [quantity] => 3
+            [imageUrl] => http://localhost/guardiashop1/images/blusas/lu3.png
+        )
+
+    [2] => Array
+        (
+            [id_detalles_productos] => 7
+            [name] => Blusa “Encanto Volante” - Blanco - Talla L
+            [price] => 135000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/blusas/lu1-1.png
+        )
+
+    [3] => Array
+        (
+            [id_detalles_productos] => 95
+            [name] => Camisa “Estilo Casual” - Blanco - Talla L
+            [price] => 165000
+            [quantity] => 2
+            [imageUrl] => http://localhost/guardiashop1/images/camisa_hombre/sa3-2.png
+        )
+
+    [4] => Array
+        (
+            [id_detalles_productos] => 59
+            [name] => Gorra “Línea Clara” - Blanco - Talla Única
+            [price] => 85000
+            [quantity] => 2
+            [imageUrl] => http://localhost/guardiashop1/images/gorras/rra4-1.png
+        )
+
+)
+
+✅ Pago marcado como COMPLETADO
+🛒 Carrito contiene: Array
+(
+    [0] => Array
+        (
+            [id_detalles_productos] => 47
+            [name] => Blusa “Corte Moderno” - Azul Marino - Talla L
+            [price] => 148000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/blusas/lu4-2.png
+        )
+
+    [1] => Array
+        (
+            [id_detalles_productos] => 27
+            [name] => Blusa “Línea Elegante” - Blanco - Talla L
+            [price] => 155000
+            [quantity] => 3
+            [imageUrl] => http://localhost/guardiashop1/images/blusas/lu3.png
+        )
+
+    [2] => Array
+        (
+            [id_detalles_productos] => 7
+            [name] => Blusa “Encanto Volante” - Blanco - Talla L
+            [price] => 135000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/blusas/lu1-1.png
+        )
+
+    [3] => Array
+        (
+            [id_detalles_productos] => 95
+            [name] => Camisa “Estilo Casual” - Blanco - Talla L
+            [price] => 165000
+            [quantity] => 2
+            [imageUrl] => http://localhost/guardiashop1/images/camisa_hombre/sa3-2.png
+        )
+
+    [4] => Array
+        (
+            [id_detalles_productos] => 59
+            [name] => Gorra “Línea Clara” - Blanco - Talla Única
+            [price] => 85000
+            [quantity] => 2
+            [imageUrl] => http://localhost/guardiashop1/images/gorras/rra4-1.png
+        )
+
+)
+
+📝 Detalle insertado: Producto 47, Cantidad 1, Subtotal 148000
+📦 Stock actualizado para producto 47, -1 unidades
+📝 Detalle insertado: Producto 27, Cantidad 3, Subtotal 465000
+📦 Stock actualizado para producto 27, -3 unidades
+📝 Detalle insertado: Producto 7, Cantidad 1, Subtotal 135000
+📦 Stock actualizado para producto 7, -1 unidades
+📝 Detalle insertado: Producto 95, Cantidad 2, Subtotal 330000
+📦 Stock actualizado para producto 95, -2 unidades
+📝 Detalle insertado: Producto 59, Cantidad 2, Subtotal 170000
+📦 Stock actualizado para producto 59, -2 unidades
+✅ Redirigiendo a pago_exitoso
+
+📥 Nueva solicitud POST - 2025-05-30 09:29:04
+✅ Pago registrado correctamente con ID: 25 y estado: completado
+🔍 ID Pedido recibido: 63
+🛒 Contenido del carrito:
+Array
+(
+    [0] => Array
+        (
+            [id_detalles_productos] => 47
+            [name] => Blusa “Corte Moderno” - Azul Marino - Talla L
+            [price] => 148000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/blusas/lu4-2.png
+        )
+
+    [1] => Array
+        (
+            [id_detalles_productos] => 7
+            [name] => Blusa “Encanto Volante” - Blanco - Talla L
+            [price] => 135000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/blusas/lu1-1.png
+        )
+
+    [2] => Array
+        (
+            [id_detalles_productos] => 95
+            [name] => Camisa “Estilo Casual” - Blanco - Talla L
+            [price] => 165000
+            [quantity] => 2
+            [imageUrl] => http://localhost/guardiashop1/images/camisa_hombre/sa3-2.png
+        )
+
+    [3] => Array
+        (
+            [id_detalles_productos] => 59
+            [name] => Gorra “Línea Clara” - Blanco - Talla Única
+            [price] => 85000
+            [quantity] => 2
+            [imageUrl] => http://localhost/guardiashop1/images/gorras/rra4-1.png
+        )
+
+)
+
+✅ Pago marcado como COMPLETADO
+🛒 Carrito contiene: Array
+(
+    [0] => Array
+        (
+            [id_detalles_productos] => 47
+            [name] => Blusa “Corte Moderno” - Azul Marino - Talla L
+            [price] => 148000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/blusas/lu4-2.png
+        )
+
+    [1] => Array
+        (
+            [id_detalles_productos] => 7
+            [name] => Blusa “Encanto Volante” - Blanco - Talla L
+            [price] => 135000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/blusas/lu1-1.png
+        )
+
+    [2] => Array
+        (
+            [id_detalles_productos] => 95
+            [name] => Camisa “Estilo Casual” - Blanco - Talla L
+            [price] => 165000
+            [quantity] => 2
+            [imageUrl] => http://localhost/guardiashop1/images/camisa_hombre/sa3-2.png
+        )
+
+    [3] => Array
+        (
+            [id_detalles_productos] => 59
+            [name] => Gorra “Línea Clara” - Blanco - Talla Única
+            [price] => 85000
+            [quantity] => 2
+            [imageUrl] => http://localhost/guardiashop1/images/gorras/rra4-1.png
+        )
+
+)
+
+📝 Detalle insertado: Producto 47, Cantidad 1, Subtotal 148000
+📦 Stock actualizado para producto 47, -1 unidades
+📝 Detalle insertado: Producto 7, Cantidad 1, Subtotal 135000
+📦 Stock actualizado para producto 7, -1 unidades
+📝 Detalle insertado: Producto 95, Cantidad 2, Subtotal 330000
+📦 Stock actualizado para producto 95, -2 unidades
+📝 Detalle insertado: Producto 59, Cantidad 2, Subtotal 170000
+📦 Stock actualizado para producto 59, -2 unidades
+✅ Redirigiendo a pago_exitoso
+
+📥 Nueva solicitud POST - 2025-05-30 09:32:15
+✅ Pago registrado correctamente con ID: 26 y estado: fallido
+⚠️ Pago fallido. Redirigiendo a pago_fallido
+
+📥 Nueva solicitud POST - 2025-05-30 09:50:53
+✅ Pago registrado correctamente con ID: 27 y estado: fallido
+⚠️ Pago fallido. Redirigiendo a pago_fallido
+
+📥 Nueva solicitud POST - 2025-05-30 09:57:13
+✅ Pago registrado correctamente con ID: 28 y estado: fallido
+⚠️ Pago fallido. Redirigiendo a pago_fallido
+
+📥 Nueva solicitud POST - 2025-05-30 20:09:22
+✅ Pago registrado correctamente con ID: 30 y estado: completado
+✅ Pago marcado como COMPLETADO
+🛒 Carrito contiene: Array
+(
+    [0] => Array
+        (
+            [id_detalles_productos] => 47
+            [name] => Blusa “Corte Moderno” - Azul Marino - Talla L
+            [price] => 148000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/blusas/lu4-2.png
+        )
+
+    [1] => Array
+        (
+            [id_detalles_productos] => 7
+            [name] => Blusa “Encanto Volante” - Blanco - Talla L
+            [price] => 135000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/blusas/lu1-1.png
+        )
+
+    [2] => Array
+        (
+            [id_detalles_productos] => 95
+            [name] => Camisa “Estilo Casual” - Blanco - Talla L
+            [price] => 165000
+            [quantity] => 2
+            [imageUrl] => http://localhost/guardiashop1/images/camisa_hombre/sa3-2.png
+        )
+
+    [3] => Array
+        (
+            [id_detalles_productos] => 59
+            [name] => Gorra “Línea Clara” - Blanco - Talla Única
+            [price] => 85000
+            [quantity] => 2
+            [imageUrl] => http://localhost/guardiashop1/images/gorras/rra4-1.png
+        )
+
+    [4] => Array
+        (
+            [id_detalles_productos] => 183
+            [name] => Shorts Cintura Alta Belted - Blanco - Talla L
+            [price] => 140000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/short_damas/sda3.png
+        )
+
+)
+
+📦 Stock actualizado para producto 47, -1 unidades
+📦 Stock actualizado para producto 7, -1 unidades
+📦 Stock actualizado para producto 95, -2 unidades
+📦 Stock actualizado para producto 59, -2 unidades
+📦 Stock actualizado para producto 183, -1 unidades
+✅ Redirigiendo a pago_exitoso
+
+📥 Nueva solicitud POST - 2025-05-30 23:14:49
+✅ Pago registrado correctamente con ID: 32 y estado: completado
+✅ Pago marcado como COMPLETADO
+🛒 Carrito contiene: Array
+(
+    [0] => Array
+        (
+            [id_detalles_productos] => 214
+            [name] => Camisa Esencia Satinada - Caqui - Talla M
+            [price] => 160000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/camisa_damas/cda1-2.png
+        )
+
+    [1] => Array
+        (
+            [id_detalles_productos] => 224
+            [name] => Camisa Brisa Vintage - Blanco - Talla XL
+            [price] => 150000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/camisa_damas/cda2-1.png
+        )
+
+)
+
+📦 Stock actualizado para producto 214, -1 unidades
+📦 Stock actualizado para producto 224, -1 unidades
+✅ Redirigiendo a pago_exitoso
+
+📥 Nueva solicitud POST - 2025-05-30 23:23:49
+✅ Pago registrado correctamente con ID: 33 y estado: completado
+✅ Pago marcado como COMPLETADO
+🛒 Carrito contiene: Array
+(
+    [0] => Array
+        (
+            [id_detalles_productos] => 214
+            [name] => Camisa Esencia Satinada - Caqui - Talla M
+            [price] => 160000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/camisa_damas/cda1-2.png
+        )
+
+    [1] => Array
+        (
+            [id_detalles_productos] => 224
+            [name] => Camisa Brisa Vintage - Blanco - Talla XL
+            [price] => 150000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/camisa_damas/cda2-1.png
+        )
+
+    [2] => Array
+        (
+            [id_detalles_productos] => 7
+            [name] => Blusa “Encanto Volante” - Blanco - Talla L
+            [price] => 135000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/blusas/lu1-1.png
+        )
+
+)
+
+📦 Stock actualizado para producto 214, -1 unidades
+📦 Stock actualizado para producto 224, -1 unidades
+📦 Stock actualizado para producto 7, -1 unidades
+✅ Redirigiendo a pago_exitoso
+
+📥 Nueva solicitud POST - 2025-05-30 23:33:57
+✅ Pago registrado correctamente con ID: 34 y estado: completado
+✅ Pago marcado como COMPLETADO
+🛒 Carrito contiene: Array
+(
+    [0] => Array
+        (
+            [id_detalles_productos] => 214
+            [name] => Camisa Esencia Satinada - Caqui - Talla M
+            [price] => 160000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/camisa_damas/cda1-2.png
+        )
+
+    [1] => Array
+        (
+            [id_detalles_productos] => 224
+            [name] => Camisa Brisa Vintage - Blanco - Talla XL
+            [price] => 150000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/camisa_damas/cda2-1.png
+        )
+
+    [2] => Array
+        (
+            [id_detalles_productos] => 7
+            [name] => Blusa “Encanto Volante” - Blanco - Talla L
+            [price] => 135000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/blusas/lu1-1.png
+        )
+
+)
+
+📦 Stock actualizado para producto 214, -1 unidades
+📦 Stock actualizado para producto 224, -1 unidades
+📦 Stock actualizado para producto 7, -1 unidades
+✅ Redirigiendo a pago_exitoso
+
+📥 Nueva solicitud POST - 2025-05-30 23:52:21
+✅ Pago registrado correctamente con ID: 35 y estado: completado
+✅ Pago marcado como COMPLETADO
+🛒 Carrito contiene: Array
+(
+    [0] => Array
+        (
+            [id_detalles_productos] => 214
+            [name] => Camisa Esencia Satinada - Caqui - Talla M
+            [price] => 160000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/camisa_damas/cda1-2.png
+        )
+
+    [1] => Array
+        (
+            [id_detalles_productos] => 224
+            [name] => Camisa Brisa Vintage - Blanco - Talla XL
+            [price] => 150000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/camisa_damas/cda2-1.png
+        )
+
+    [2] => Array
+        (
+            [id_detalles_productos] => 7
+            [name] => Blusa “Encanto Volante” - Blanco - Talla L
+            [price] => 135000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/blusas/lu1-1.png
+        )
+
+    [3] => Array
+        (
+            [id_detalles_productos] => 67
+            [name] => Camisa “Botón Relax” - Negro - Talla L
+            [price] => 160000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/camisa_hombre/sa1-1.png
+        )
+
+)
+
+📦 Stock actualizado para producto 214, -1 unidades
+📦 Stock actualizado para producto 224, -1 unidades
+📦 Stock actualizado para producto 7, -1 unidades
+📦 Stock actualizado para producto 67, -1 unidades
+✅ Redirigiendo a pago_exitoso
+
+📥 Nueva solicitud POST - 2025-05-31 01:40:39
+✅ Pago registrado correctamente con ID: 36 y estado: completado
+✅ Pago marcado como COMPLETADO
+🛒 Carrito contiene: Array
+(
+    [0] => Array
+        (
+            [id_detalles_productos] => 60
+            [name] => Gorra “Línea Clara” - Café - Talla Única
+            [price] => 85000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/gorras/rra4-2.png
+        )
+
+    [1] => Array
+        (
+            [id_detalles_productos] => 155
+            [name] => Short “Cargo Urbano” - Azul Marino - Talla L
+            [price] => 150000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/shorts_hombre/sh4-2.jpg
+        )
+
+)
+
+📦 Stock actualizado para producto 60, -1 unidades
+📦 Stock actualizado para producto 155, -1 unidades
+✅ Redirigiendo a pago_exitoso
+
+📥 Nueva solicitud POST - 2025-05-31 02:01:30
+✅ Pago registrado correctamente con ID: 37 y estado: completado
+✅ Pago marcado como COMPLETADO
+🛒 Carrito contiene: Array
+(
+    [0] => Array
+        (
+            [id_detalles_productos] => 60
+            [name] => Gorra “Línea Clara” - Café - Talla Única
+            [price] => 85000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/gorras/rra4-2.png
+        )
+
+    [1] => Array
+        (
+            [id_detalles_productos] => 155
+            [name] => Short “Cargo Urbano” - Azul Marino - Talla L
+            [price] => 150000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/shorts_hombre/sh4-2.jpg
+        )
+
+    [2] => Array
+        (
+            [id_detalles_productos] => 7
+            [name] => Blusa “Encanto Volante” - Blanco - Talla L
+            [price] => 135000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/blusas/lu1-1.png
+        )
+
+)
+
+📦 Stock actualizado para producto 60, -1 unidades
+📦 Stock actualizado para producto 155, -1 unidades
+📦 Stock actualizado para producto 7, -1 unidades
+✅ Redirigiendo a pago_exitoso
+
+📥 Nueva solicitud POST - 2025-05-31 02:14:54
+✅ Pago registrado correctamente con ID: 38 y estado: completado
+✅ Pago marcado como COMPLETADO
+🛒 Carrito contiene: Array
+(
+    [0] => Array
+        (
+            [id_detalles_productos] => 60
+            [name] => Gorra “Línea Clara” - Café - Talla Única
+            [price] => 85000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/gorras/rra4-2.png
+        )
+
+    [1] => Array
+        (
+            [id_detalles_productos] => 155
+            [name] => Short “Cargo Urbano” - Azul Marino - Talla L
+            [price] => 150000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/shorts_hombre/sh4-2.jpg
+        )
+
+    [2] => Array
+        (
+            [id_detalles_productos] => 7
+            [name] => Blusa “Encanto Volante” - Blanco - Talla L
+            [price] => 135000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/blusas/lu1-1.png
+        )
+
+)
+
+📦 Stock actualizado para producto 60, -1 unidades
+📦 Stock actualizado para producto 155, -1 unidades
+📦 Stock actualizado para producto 7, -1 unidades
+✅ Redirigiendo a pago_exitoso
+
+📥 Nueva solicitud POST - 2025-05-31 02:37:19
+✅ Pago registrado correctamente con ID: 39 y estado: completado
+✅ Pago marcado como COMPLETADO
+🛒 Carrito contiene: Array
+(
+    [0] => Array
+        (
+            [id_detalles_productos] => 60
+            [name] => Gorra “Línea Clara” - Café - Talla Única
+            [price] => 85000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/gorras/rra4-2.png
+        )
+
+    [1] => Array
+        (
+            [id_detalles_productos] => 155
+            [name] => Short “Cargo Urbano” - Azul Marino - Talla L
+            [price] => 150000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/shorts_hombre/sh4-2.jpg
+        )
+
+    [2] => Array
+        (
+            [id_detalles_productos] => 7
+            [name] => Blusa “Encanto Volante” - Blanco - Talla L
+            [price] => 135000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/blusas/lu1-1.png
+        )
+
+)
+
+📦 Stock actualizado para producto 60, -1 unidades
+📦 Stock actualizado para producto 155, -1 unidades
+📦 Stock actualizado para producto 7, -1 unidades
+✅ Redirigiendo a pago_exitoso
+
+📥 Nueva solicitud POST - 2025-05-31 03:35:29
+✅ Pago registrado correctamente con ID: 40 y estado: completado
+✅ Pago marcado como COMPLETADO
+🛒 Carrito contiene: Array
+(
+    [0] => Array
+        (
+            [id_detalles_productos] => 60
+            [name] => Gorra “Línea Clara” - Café - Talla Única
+            [price] => 85000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/gorras/rra4-2.png
+        )
+
+    [1] => Array
+        (
+            [id_detalles_productos] => 155
+            [name] => Short “Cargo Urbano” - Azul Marino - Talla L
+            [price] => 150000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/shorts_hombre/sh4-2.jpg
+        )
+
+    [2] => Array
+        (
+            [id_detalles_productos] => 7
+            [name] => Blusa “Encanto Volante” - Blanco - Talla L
+            [price] => 135000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/blusas/lu1-1.png
+        )
+
+    [3] => Array
+        (
+            [id_detalles_productos] => 223
+            [name] => Camisa Brisa Vintage - Blanco - Talla L
+            [price] => 150000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/camisa_damas/cda2-1.png
+        )
+
+)
+
+📦 Stock actualizado para producto 60, -1 unidades
+📦 Stock actualizado para producto 155, -1 unidades
+📦 Stock actualizado para producto 7, -1 unidades
+📦 Stock actualizado para producto 223, -1 unidades
+✅ Redirigiendo a pago_exitoso
+
+📥 Nueva solicitud POST - 2025-05-31 03:50:26
+✅ Pago registrado correctamente con ID: 41 y estado: completado
+✅ Pago marcado como COMPLETADO
+⚠️ Carrito vacío o no definido
+✅ Redirigiendo a pago_exitoso
+
+📥 Nueva solicitud POST - 2025-05-31 05:05:46
+✅ Pago registrado correctamente con ID: 42 y estado: fallido
+⚠️ Pago fallido. Redirigiendo a pago_fallido
+
+📥 Nueva solicitud POST - 2025-05-31 05:06:33
+✅ Pago registrado correctamente con ID: 43 y estado: completado
+✅ Pago marcado como COMPLETADO
+🛒 Carrito contiene: Array
+(
+    [0] => Array
+        (
+            [id_detalles_productos] => 60
+            [name] => Gorra “Línea Clara” - Café - Talla Única
+            [price] => 85000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/gorras/rra4-2.png
+        )
+
+    [1] => Array
+        (
+            [id_detalles_productos] => 155
+            [name] => Short “Cargo Urbano” - Azul Marino - Talla L
+            [price] => 150000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/shorts_hombre/sh4-2.jpg
+        )
+
+    [2] => Array
+        (
+            [id_detalles_productos] => 7
+            [name] => Blusa “Encanto Volante” - Blanco - Talla L
+            [price] => 135000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/blusas/lu1-1.png
+        )
+
+    [3] => Array
+        (
+            [id_detalles_productos] => 223
+            [name] => Camisa Brisa Vintage - Blanco - Talla L
+            [price] => 150000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/camisa_damas/cda2-1.png
+        )
+
+)
+
+📦 Stock actualizado para producto 60, -1 unidades
+📦 Stock actualizado para producto 155, -1 unidades
+📦 Stock actualizado para producto 7, -1 unidades
+📦 Stock actualizado para producto 223, -1 unidades
+✅ Redirigiendo a pago_exitoso
+
+📥 Nueva solicitud POST - 2025-05-31 05:08:07
+✅ Pago registrado correctamente con ID: 44 y estado: completado
+✅ Pago marcado como COMPLETADO
+🛒 Carrito contiene: Array
+(
+    [0] => Array
+        (
+            [id_detalles_productos] => 60
+            [name] => Gorra “Línea Clara” - Café - Talla Única
+            [price] => 85000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/gorras/rra4-2.png
+        )
+
+    [1] => Array
+        (
+            [id_detalles_productos] => 155
+            [name] => Short “Cargo Urbano” - Azul Marino - Talla L
+            [price] => 150000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/shorts_hombre/sh4-2.jpg
+        )
+
+    [2] => Array
+        (
+            [id_detalles_productos] => 7
+            [name] => Blusa “Encanto Volante” - Blanco - Talla L
+            [price] => 135000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/blusas/lu1-1.png
+        )
+
+    [3] => Array
+        (
+            [id_detalles_productos] => 223
+            [name] => Camisa Brisa Vintage - Blanco - Talla L
+            [price] => 150000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/camisa_damas/cda2-1.png
+        )
+
+)
+
+📦 Stock actualizado para producto 60, -1 unidades
+📦 Stock actualizado para producto 155, -1 unidades
+📦 Stock actualizado para producto 7, -1 unidades
+📦 Stock actualizado para producto 223, -1 unidades
+✅ Redirigiendo a pago_exitoso
+
+📥 Nueva solicitud POST - 2025-05-31 08:38:53
+✅ Pago registrado correctamente con ID: 45 y estado: completado
+✅ Pago marcado como COMPLETADO
+🛒 Carrito contiene: Array
+(
+    [0] => Array
+        (
+            [id_detalles_productos] => 60
+            [name] => Gorra “Línea Clara” - Café - Talla Única
+            [price] => 85000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/gorras/rra4-2.png
+        )
+
+    [1] => Array
+        (
+            [id_detalles_productos] => 155
+            [name] => Short “Cargo Urbano” - Azul Marino - Talla L
+            [price] => 150000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/shorts_hombre/sh4-2.jpg
+        )
+
+    [2] => Array
+        (
+            [id_detalles_productos] => 7
+            [name] => Blusa “Encanto Volante” - Blanco - Talla L
+            [price] => 135000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/blusas/lu1-1.png
+        )
+
+    [3] => Array
+        (
+            [id_detalles_productos] => 223
+            [name] => Camisa Brisa Vintage - Blanco - Talla L
+            [price] => 150000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/camisa_damas/cda2-1.png
+        )
+
+    [4] => Array
+        (
+            [id_detalles_productos] => 7
+            [name] => Blusa “Encanto Volante” - Blanco - Talla L
+            [price] => 135000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/blusas/lu1-1.png
+        )
+
+    [5] => Array
+        (
+            [id_detalles_productos] => 7
+            [name] => Blusa “Encanto Volante” - Blanco - Talla L
+            [price] => 135000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/blusas/lu1-1.png
+        )
+
+)
+
+📦 Stock actualizado para producto 60, -1 unidades
+📦 Stock actualizado para producto 155, -1 unidades
+📦 Stock actualizado para producto 7, -1 unidades
+📦 Stock actualizado para producto 223, -1 unidades
+📦 Stock actualizado para producto 7, -1 unidades
+📦 Stock actualizado para producto 7, -1 unidades
+✅ Redirigiendo a pago_exitoso
+
+📥 Nueva solicitud POST - 2025-06-01 05:46:32
+✅ Pago registrado correctamente con ID: 1 y estado: fallido
+⚠️ Pago fallido. Redirigiendo a pago_fallido
+
+📥 Nueva solicitud POST - 2025-06-01 05:47:32
+✅ Pago registrado correctamente con ID: 2 y estado: completado
+✅ Pago marcado como COMPLETADO
+🛒 Carrito contiene: Array
+(
+    [0] => Array
+        (
+            [id_detalles_productos] => 35
+            [name] => Blusa “Línea Elegante” - Caqui - Talla L
+            [price] => 155000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop1/images/blusas/lu3-2.png
+        )
+
+)
+
+📦 Stock actualizado para producto 35, -1 unidades
+✅ Redirigiendo a pago_exitoso
+
+📥 Nueva solicitud POST - 2025-06-01 08:29:38
+✅ Pago registrado correctamente con ID: 3 y estado: completado
+✅ Pago marcado como COMPLETADO
+🛒 Carrito contiene: Array
+(
+    [0] => Array
+        (
+            [idDetalleProducto] => 19
+            [name] => Blusa “Asimétrica Chic” - Negro - Talla L
+            [price] => 140000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop/images/blusas/lu2-1.png
+        )
+
+    [1] => Array
+        (
+            [idDetalleProducto] => 7
+            [name] => Blusa “Encanto Volante” - Blanco - Talla L
+            [price] => 135000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop/images/blusas/lu1-1.png
+        )
+
+    [2] => Array
+        (
+            [idDetalleProducto] => 183
+            [name] => Shorts Cintura Alta Belted - Blanco - Talla L
+            [price] => 140000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop/images/short_damas/sda3.png
+        )
+
+    [3] => Array
+        (
+            [idDetalleProducto] => 47
+            [name] => Blusa “Corte Moderno” - Azul Marino - Talla L
+            [price] => 148000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop/images/blusas/lu4-2.png
+        )
+
+)
+
+❌ Error insertando en detalles_pedido: Column 'id_detalles_productos' cannot be null
+
+📥 Nueva solicitud POST - 2025-06-01 08:43:28
+✅ Pago registrado correctamente con ID: 4 y estado: completado
+✅ Pago marcado como COMPLETADO
+🛒 Carrito contiene: Array
+(
+    [0] => Array
+        (
+            [idDetalleProducto] => 19
+            [name] => Blusa “Asimétrica Chic” - Negro - Talla L
+            [price] => 140000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop/images/blusas/lu2-1.png
+        )
+
+    [1] => Array
+        (
+            [idDetalleProducto] => 7
+            [name] => Blusa “Encanto Volante” - Blanco - Talla L
+            [price] => 135000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop/images/blusas/lu1-1.png
+        )
+
+    [2] => Array
+        (
+            [idDetalleProducto] => 183
+            [name] => Shorts Cintura Alta Belted - Blanco - Talla L
+            [price] => 140000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop/images/short_damas/sda3.png
+        )
+
+    [3] => Array
+        (
+            [idDetalleProducto] => 47
+            [name] => Blusa “Corte Moderno” - Azul Marino - Talla L
+            [price] => 148000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop/images/blusas/lu4-2.png
+        )
+
+)
+
+❌ Error insertando en detalles_pedido: Column 'id_detalles_productos' cannot be null
+
+📥 Nueva solicitud POST - 2025-06-01 08:51:24
+✅ Pago registrado correctamente con ID: 5 y estado: fallido
+⚠️ Pago fallido. Redirigiendo a pago_fallido
+
+📥 Nueva solicitud POST - 2025-06-01 08:52:28
+✅ Pago registrado correctamente con ID: 6 y estado: completado
+✅ Pago marcado como COMPLETADO
+🛒 Carrito contiene: Array
+(
+    [0] => Array
+        (
+            [idDetalleProducto] => 19
+            [name] => Blusa “Asimétrica Chic” - Negro - Talla L
+            [price] => 140000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop/images/blusas/lu2-1.png
+        )
+
+    [1] => Array
+        (
+            [idDetalleProducto] => 7
+            [name] => Blusa “Encanto Volante” - Blanco - Talla L
+            [price] => 135000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop/images/blusas/lu1-1.png
+        )
+
+    [2] => Array
+        (
+            [idDetalleProducto] => 183
+            [name] => Shorts Cintura Alta Belted - Blanco - Talla L
+            [price] => 140000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop/images/short_damas/sda3.png
+        )
+
+    [3] => Array
+        (
+            [idDetalleProducto] => 47
+            [name] => Blusa “Corte Moderno” - Azul Marino - Talla L
+            [price] => 148000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop/images/blusas/lu4-2.png
+        )
+
+)
+
+📦 Stock actualizado para producto 19, -1 unidades
+📦 Stock actualizado para producto 7, -1 unidades
+📦 Stock actualizado para producto 183, -1 unidades
+📦 Stock actualizado para producto 47, -1 unidades
+✅ Redirigiendo a pago_exitoso
+
+📥 Nueva solicitud POST - 2025-06-01 17:22:13
+✅ Pago registrado correctamente con ID: 7 y estado: completado
+✅ Pago marcado como COMPLETADO
+🛒 Carrito contiene: Array
+(
+    [0] => Array
+        (
+            [idDetalleProducto] => 43
+            [name] => Blusa “Corte Moderno” - Blanco - Talla L
+            [price] => 148000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop/images/blusas/lu4-1.png
+        )
+
+    [1] => Array
+        (
+            [idDetalleProducto] => 251
+            [name] => Camisa Estilo Profundo - Caqui - Talla L
+            [price] => 165000
+            [quantity] => 1
+            [imageUrl] => http://localhost/guardiashop/images/camisa_damas/cda4-2.png
+        )
+
+)
+
+📦 Stock actualizado para producto 43, -1 unidades
+📦 Stock actualizado para producto 251, -1 unidades
+✅ Redirigiendo a pago_exitoso
+
+📥 Nueva solicitud POST - 2025-06-01 17:22:24
+✅ Pago registrado correctamente con ID: 8 y estado: completado
+✅ Pago marcado como COMPLETADO
+⚠️ Carrito vacío o no definido
+✅ Redirigiendo a pago_exitoso
+
+📥 Nueva solicitud POST - 2025-06-01 17:22:24
+✅ Pago registrado correctamente con ID: 9 y estado: completado
+✅ Pago marcado como COMPLETADO
+⚠️ Carrito vacío o no definido
+✅ Redirigiendo a pago_exitoso

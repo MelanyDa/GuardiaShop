@@ -1,0 +1,1112 @@
+/*NABVAR**/
+/* Eliminar espacio blanco y hacer el navbar más ajustado */
+/* Logo en el navbar */
+.logo img {
+  max-height: 70px;
+  width: auto;
+  display: block;
+}
+.header {
+  background-color: #ffffff;
+  padding: 10px 0; /* Un poco de padding vertical */
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+/* Estilo del logo */
+.logo {
+  font-size: 30px;
+  font-weight: bold;
+  color: #b78732;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+/* Estilo de los enlaces de navegación */
+.nav-links ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links ul li a {
+  text-decoration: none;
+  font-size: 15px;
+  color: #2c4926; /* Cambiado para fondo blanco */
+  transition: color 0.3s ease;
+}
+
+.nav-links ul li a:hover {
+  color: #b78732;
+}
+
+/*BOTON LOGIN*/
+.user-menu {
+  position: relative;
+  display: inline-block;
+  margin-right: 90px;
+}
+
+.user-name {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.menu-toggle {
+  cursor: pointer;
+  font-size: 25px;
+  padding-left: 5px;
+  user-select: none;
+}
+
+.user-dropdown {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  min-width: 180px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 999;
+  border-radius: 8px;
+}
+
+.hidden {
+  display: none;
+}
+
+.logout-link {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #d9534f;
+  text-decoration: none;
+}
+
+.logout-link:hover {
+  text-decoration: underline;
+}
+
+.user-menu {
+    position: relative;
+    display: inline-block;
+  }
+
+  .user-icon {
+    cursor: pointer;
+    font-size: 24px;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    min-width: 160px;
+    border: 1px solid #ddd;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+    z-index: 1;
+  }
+
+  .dropdown-content p {
+    padding: 10px;
+    margin: 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .dropdown-content a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: red;
+    text-align: center;
+  }
+
+  .user-menu:hover .dropdown-content {
+    display: block;
+  }
+/*MENU AMBUERGUESA*/
+/* Estilos para el botón hamburguesa */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #2c4926;
+}
+
+/* --- Botón Hamburguesa (Móvil) --- */
+/* >>> ESTOS SON ESTILOS NUEVOS <<< */
+.hamburger-btn {
+  display: none; /* Se mostrará con @media query */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1002; 
+}
+
+.hamburger-btn span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #2c4926;
+  margin: 5px 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger-btn.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-btn.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+.nav-links-desktop ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+.nav-links-desktop ul li a {
+  text-decoration: none;
+  font-size: 16px;
+  color: #2c4926;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links-desktop ul li a:hover {
+  color: #b78732;
+}
+
+/* --- Sección Derecha del Navbar (Escritorio) --- */
+/* >>> REVISA SI TIENES UN CONTENEDOR PARA ESTO <<< */
+.navbar-right-desktop {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* >>> REEMPLAZA O COMBINA TUS ESTILOS ACTUALES DE .user-menu CON ESTOS <<< */
+.user-menu-desktop {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.user-name-desktop {
+  font-weight: 500;
+  margin-right: 8px;
+  color: #333;
+}
+
+.user-menu-toggle-desktop {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-icon-svg { /* Estilo para tu nuevo ícono de usuario */
+    width: 24px;
+    height: 24px;
+    fill: #333;
+}
+.user-menu-toggle-desktop:hover .user-icon-svg {
+    fill: #b78732;
+}
+
+/* >>> REEMPLAZA O COMBINA TUS ESTILOS DE .user-dropdown CON ESTOS <<< */
+/* >>> NOTA EL CAMBIO DE .hidden a .active para controlar la visibilidad <<< */
+.user-dropdown-desktop {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 10px);
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 10px 0;
+  min-width: 200px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 1001;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+}
+
+.user-dropdown-desktop.active { /* Se muestra con la clase .active */
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.user-dropdown-desktop a {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #333;
+  font-size: 15px;
+}
+
+.user-dropdown-desktop a:hover {
+  background-color: #f5f5f5;
+  color: #b78732;
+}
+
+.user-dropdown-desktop .logout-link {
+  color: #d9534f;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 5px;
+  padding-top: 10px;
+}
+.user-dropdown-desktop .logout-link:hover {
+  background-color: #f5f5f5;
+  color: #c9302c;
+}
+/* >>> ESTILOS PARA EL ÍCONO DEL CARRITO EN ESCRITORIO <<< */
+.cart-icon-desktop {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+}
+.cart-icon-svg {
+    width: 28px;
+    height: 28px;
+    fill: #333;
+}
+.cart-icon-desktop:hover .cart-icon-svg {
+    fill: #b78732;
+}
+
+.cart-count-desktop {
+  position: absolute;
+  top: -5px;
+  right: -8px;
+  background-color: #b78732;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.btn-login-desktop {
+    padding: 8px 18px;
+    font-size: 15px;
+    /* Asegúrate que herede o tenga estilos de .btn .btn-warning si los usas */
+}
+/* --- Menú Desplegable Móvil --- */
+/* >>> ESTOS SON ESTILOS NUEVOS <<< */
+.mobile-nav {
+  display: none; 
+  position: absolute;
+  top: 100%; 
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 999; 
+  padding: 15px 0;
+  border-top: 1px solid #eee; /* Este borde debería solucionar el que veías */
+}
+
+.mobile-nav.active {
+    display: block;
+}
+
+.mobile-user-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid #eee;
+}
+.mobile-user-name {
+    font-weight: bold;
+    color: #333;
+}
+.mobile-user-menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+.user-icon-svg-mobile { /* Para el ícono de chevron o similar */
+    width: 20px;
+    height: 20px;
+    fill: #555;
+}
+.mobile-user-submenu {
+    background-color: #f9f9f9;
+    padding-left: 30px; 
+}
+.mobile-user-submenu.hidden { /* JavaScript controlará esto */
+    display: none;
+}
+.mobile-user-submenu a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #444;
+    font-size: 15px;
+}
+.mobile-user-submenu a:hover {
+    background-color: #e9e9e9;
+    color: #b78732;
+}
+.mobile-user-submenu .logout-link{
+    color: #d9534f;
+}
+
+.mobile-nav-link, .mobile-cart-link, .btn-login-mobile {
+  display: block;
+  padding: 12px 20px;
+  text-decoration: none;
+  color: #2c4926;
+  font-size: 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.mobile-nav-link:hover, .mobile-cart-link:hover, .btn-login-mobile:hover {
+  background-color: #f9f9f9;
+  color: #b78732;
+}
+.btn-login-mobile {
+    text-align: center;
+    font-weight: bold;
+}
+
+.mobile-cart-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+.cart-icon-svg-mobile{ /* Para el ícono de carrito en el menú móvil */
+    width: 22px;
+    height: 22px;
+    fill: #2c4926;
+}
+.mobile-cart-link:hover .cart-icon-svg-mobile {
+    fill: #b78732;
+}
+/* --- Responsive Media Query --- */
+/* >>> AJUSTA EL max-width: 991px SI ES NECESARIO <<< */
+/* Este es el punto donde el menú de escritorio se oculta y aparece el hamburguesa */
+@media (max-width: 991px) { 
+  .nav-links-desktop,
+  .navbar-right-desktop {
+    display: none; 
+  }
+  .hamburger-btn {
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-around; 
+  }
+  .navbar { /* Puedes ajustar el padding del navbar en móvil si es necesario */
+    padding: 0 15px; 
+  }
+}
+
+/* --- Clase Hidden de JavaScript --- */
+/* >>> ASEGÚRATE DE TENER ESTO O ALGO SIMILAR <<< */
+/* Si JavaScript usa .hidden para ocultar, esta regla es crucial */
+.hidden {
+  display: none !important;
+}
+/* Estilo responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    width: 100%;
+  }
+
+ .nav-links.active {
+  display: block;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  z-index: 2000; /* Mayor que el del carrito */
+  width: 100%;
+  padding: 20px;
+  border: none;
+}
+
+
+  .nav-links ul {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .user-menu {
+    margin-top: 10px;
+  }
+}
+
+/* Estilo del botón de carrito */
+.navbar-icons .btn-cart {
+  background-color: #b78732;
+  color: #EFD9AB;
+  padding: 8px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-icons .btn-cart:hover {
+  background-color: #B79F5E;
+  color: #2c4926;
+}
+
+/* Eliminar margen/padding global que puede generar espacio blanco */
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+/* --- HERO / BANNER --- */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+    background: url('../images/banner.png') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+  }
+  
+  .hero-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 20px;
+  }
+  
+  .hero-text {
+    width: 48%;
+    text-align: left;
+  }
+  
+  .hero-subtitle {
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+  
+  .hero-title {
+    font-size: 56px;
+    line-height: 1.1;
+    color: #ffffff;
+    margin-bottom: 25px;
+  }
+  
+  .btn-primary {
+    display: inline-block;
+    background-color: #b78732;
+    color: #EFD9AB;
+    padding: 14px 30px;
+    width: 158px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s;
+  }
+  a.btn-primary{
+    color: #fefefd;
+  }
+  .btn-primary:hover {
+    background-color: #B79F5E;
+  }
+  
+  .hero-image {
+    width: 48%;
+    text-align: right;
+  }
+  
+  .hero-image img {
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
+  }
+/* --- SECCIÓN CATEGORÍAS --- */
+.categories {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+  }
+  
+  .category-card {
+    background-color: #ffffff;
+    border: 1px solid #B79F5E;       /* dorado claro */
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding: 15px;
+  }
+  
+  .category-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .category-card span {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #2c4926;                   /* verde oscuro */
+    text-transform: uppercase;
+  }
+  
+  .category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .categoria-texto {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 40px; 
+  }
+  
+  .categoria-texto h2 {
+    font-size: 1.8rem; /* más pequeño */
+    font-weight: 600;
+    color: #2c4926;
+    margin: 0;
+  }
+/* --- SECCIÓN ventas nacionales --- */
+  .ventas-nacionales {
+    background-color: #F9F7F1; /* Color crema clarito */
+    padding: 80px 0;
+    text-align: center;
+  }
+
+.ventas-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.ventas-texto {
+    flex: 1 1 500px;
+    padding: 20px;
+}
+
+.ventas-texto h2 {
+    font-size: 42px;
+    font-weight: bold;
+    color: #2E463C;
+    margin-bottom: 20px;
+}
+
+.ventas-texto p {
+    font-size: 18px;
+    color: #555555;
+    margin-bottom: 30px;
+}
+
+.ventas-texto .btn-primary {
+    background-color: #b78732;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.ventas-texto .btn-primary:hover {
+    background-color: #a06f24;
+}
+
+.ventas-imagen {
+    flex: 1 1 400px;
+    text-align: center;
+}
+
+.imagen-recuadro {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: inline-block;
+    width: 300px; /* Tamaño del recuadro */
+}
+
+.imagen-recuadro img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+}
+/** PRODUCTOS POPULADRES **/
+.productos-populares {
+    background-color: #fff;
+    padding: 20px 0;
+}
+
+.titulo-seccion {
+    text-align: center;
+    font-size: 42px;
+    color: #2E463C;
+    margin-bottom: 50px;
+    font-weight: bold;
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.producto-card {
+    background-color: #ffffff;
+    border: 1px solid #E0E0E0;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.producto-card:hover {
+    transform: translateY(-5px);
+}
+
+.producto-card img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.producto-card h3 {
+    font-size: 20px;
+    color: #444242;
+    margin-bottom: 10px;
+}
+
+.producto-card .precio {
+    font-size: 18px;
+    color: #b78732;
+    margin-bottom: 20px;
+}
+
+.producto-card .btn-primary {
+    background-color: #b78732;
+    color: #EFD9AB;
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.producto-card .btn-primary:hover {
+    background-color: #a06f24;
+}
+
+/**FOOTER**/
+.footer {
+    background-color: #2c4926;
+    color: #EFD9AB;
+    padding: 60px 0 20px 0;
+    font-size: 16px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.footer-col h3, .footer-col h4 {
+    color: #b78732;
+    margin-bottom: 20px;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    text-decoration: none;
+    color: #EFD9AB;
+    transition: color 0.3s;
+}
+
+.footer-col ul li a:hover {
+    color: #b78732;
+}
+
+.footer-col p, .footer-col span {
+    color: #EFD9AB;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    border-top: 1px solid #B79F5E;
+    padding-top: 20px;
+    font-size: 14px;
+    color: #EFD9AB;
+}
+/*-------------------------------DE AQUI SESION PRENDAS-------------------------*/
+/* assets/css/style.css */
+
+/* assets/css/style.css */
+
+/* 1) Asegura que el contenedor principal ocupe todo el ancho */
+.main-content {
+  max-width: none;      /* elimina el máximo de 1200px */
+  width: 100%;          /* ancho total */
+  padding: 0;           /* quita padding lateral */
+  margin: 0 auto;       /* centrar si hubiera margen */
+}
+
+/* 2) Título y filtros */
+.page-title {
+  font-size: 48px;
+  color: #2c4926;
+  text-align: center;
+  margin: 40px 0 20px;  /* espacio arriba y abajo */
+}
+
+/* Contenedor horizontal de filtros */
+.filter-horizontal {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  background: #ffffff;
+  padding: 10px 30px;
+  margin: 20px auto;
+  border-radius: 12px;
+  /*box-shadow: 0 4px 12px #2c4926;*/
+  max-width: 80%;
+}
+
+/* Oculta las subcategorías hasta hacer clic */
+.filter-horizontal details ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.filter-horizontal li a{
+  color: #444242;
+}
+/* Diseño de cada categoría */
+.filter-horizontal summary {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Opcional: diseño de color swatches */
+.color-swatch {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 5px;
+  border: 1px solid #ccc;
+}
+
+
+
+/* 3) Grilla de 4 columnas */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* siempre 4 columnas iguales */
+  gap: 20px;
+  width: calc(100% - 40px); /* ancho total menos padding */
+  margin: 0 auto 50px;
+  padding: 0 20px;
+}
+
+/* 4) Tarjetas más compactas */
+.product-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(183, 135, 50, 0.3);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 100%;      /* altura fija */
+  object-fit: cover;
+}
+
+.product-card h3 {
+  font-size: 16px;
+  color: #2c4926;
+  margin: 10px 0 4px;
+}
+
+.price {
+  font-size: 14px;
+  color: #b78732;
+  margin-bottom: 8px;
+}
+
+.btn-primary {
+  display: block;
+  margin: 0 auto 12px;
+  background: #b78732;
+  color: #EFD9AB;
+  padding: 6px 18px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #a06f24;
+}
+
+
+  
+  /* === FOOTER === */
+  .footer {
+    background: #2c4926;
+    color: #ffffff;
+    padding: 20px 0 0;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+  
+  .footer::before {
+    content: "";
+    position: absolute;
+    top: -30px; /* ajusta según el efecto que quieras */
+    left: 0;
+    width: 100%;
+    height: 60px;
+    /*background: linear-gradient(to bottom, rgba(245, 245, 245, 0.4), transparent); /* verde difuminado */
+    z-index: -1;
+  }
+  
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 40px;
+  }
+  .footer-logo, .footer-col h4 {
+    color: #b78732;
+    margin-bottom: 20px;
+  }
+  .footer-col ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-col p, .footer-col span {
+    color: #ffffff;
+  }
+
+  .footer-col ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s;
+  }
+
+  .footer-col a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s;
+  }
+  .footer-col a:hover { color: #b78732; }
+  .footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    border-top: 1px solid #B79F5E;
+    padding-top: 20px;
+    font-size: 14px;
+  }
+  /*-----------------VER MAS DE LOS PRODUCTOS--------------*/
+  .modal-content {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    max-width: 850px;
+    width: 95%;
+    margin: 40px auto;
+    position: relative;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .modal-body {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  
+  .modal-carousel {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  
+  .modal-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+  }
+  
+  .carousel-controls button {
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    border: none;
+    font-size: 22px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .modal-details {
+    flex: 1;
+    min-width: 250px;
+  }
+  
+  .modal-details h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  
+  .modal-details p {
+    font-size: 16px;
+    color: #555;
+    margin: 8px 0;
+  }
+  
+  .modal-price {
+    font-size: 22px;
+    font-weight: bold;
+    color: #c29e2d;
+  }
+  
+  .modal-details select,
+  .modal-details button {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 6px;
+  }
+  
+  .modal-details select {
+    margin-right: 10px;
+  }
+  
+  .btn-add-cart {
+    background-color: #2f3e2f;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: #555;
+    cursor: pointer;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .modal-body {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .modal-carousel {
+      width: 90%;
+      height: auto;
+      aspect-ratio: 3/4;
+    }
+  
+    .modal-details {
+      width: 100%;
+    }
+  }
+  

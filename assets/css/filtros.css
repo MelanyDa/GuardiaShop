@@ -1,0 +1,247 @@
+
+        .modal-color-options .color-swatch.active,
+        .filter-color-options .color-swatch.active-filter-color { border: 2px solid #007bff; transform: scale(1.1); }
+        .filter-options-btn, 
+        .filter-color-options .color-swatch { display: inline-block; text-decoration: none; padding: 3px 8px; border:1px solid #ccc; margin-right:5px; margin-bottom: 5px; color: #333; border-radius: 4px; font-size:0.9em; vertical-align: middle; background-color: #f8f9fa; cursor: pointer; transition: background-color 0.2s, border-color 0.2s, color 0.2s; }
+        .filter-color-options .color-swatch { width: 20px; height: 20px; border-radius: 50%; padding: 0; text-indent: -9999px; }
+        .filter-options-btn:hover,
+        .filter-color-options .color-swatch:hover { border-color: #dbba81; background-color: #f0f0f0; }
+        .filter-options-btn.active-filter,
+        .filter-color-options .color-swatch.active-filter-color { font-weight: bold; border-color: #dbba81; color: #fff !important; background-color: #dbba81; }
+.filter-options-btn,
+.filter-color-options .color-swatch {
+    display: inline-flex; /* Para que el texto y el swatch se centren bien si tuvieran contenido */
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 5px 10px; /* Ajusta el padding para un mejor tamaño */
+    border: 1px solid #ccc;
+    /* margin-right: 5px;  Ya no es necesario si usamos gap */
+    /* margin-bottom: 5px; Ya no es necesario si usamos gap */
+    color: #333;
+    border-radius: 4px;
+    font-size: 0.9em;
+    /* vertical-align: middle; Flexbox lo maneja mejor */
+    background-color: #f8f9fa;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+    line-height: 1; /* Para asegurar que el texto no cause altura extra */
+}        .filter-horizontal details ul { list-style-type: none; padding-left: 15px; }
+        .filter-horizontal details ul li a { text-decoration: none;  padding: 5px 0; display: block; }
+        .filter-horizontal details ul li a:hover { color: #87572b; }
+        .price-filter p { display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 0.9em; margin-top: 8px; /* Espacio después del slider */}
+        .price-filter p span#priceValueDisplay { margin-right: 5px; color: #495057; }
+    html { font-size: 12px; }
+        body { zoom: 0.92; }
+        .container, .productos-grid, .producto-card, .modal-content { font-size: 0.95em; }
+ .filter-horizontal {
+    display: flex; /* Para alinear los <details> horizontalmente si lo deseas, o para alinear contenido interno */
+    flex-wrap: wrap; /* Permitir que los filtros pasen a la siguiente línea si no caben */
+    gap: 15px;      /* Espacio entre los bloques de filtro (Ropa, Precio, Color) */
+    align-items: flex-start; /* Alinea los bloques de filtro por la parte superior */
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+}
+
+.filter-horizontal details summary {
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px;
+    /* background-color: #f9f9f9; */
+    border-bottom: 1px solid transparent; /* Para un efecto sutil al abrir/cerrar */
+    list-style-position: inside; /* Para que el marcador esté dentro del padding */
+}
+.filter-horizontal details[open] summary {
+    /* border-bottom: 1px solid #ddd; */
+    margin-bottom: 5px;
+}
+/* Filtro de Precio */
+.price-filter { padding: 5px; min-width: 250px; /* Darle un ancho mínimo para que no se comprima demasiado */}
+.price-filter input[type="range"] {  width: 100%;  margin-bottom: 5px;}
+.price-filter p span { /* El contenedor del texto "Rango: $XXXX" */
+    color: #495057;
+}
+/* Filtro de Color */
+.filter-color-options {
+    padding: 5px;
+    display: flex; /* CLAVE: para alinear "Todos" y los swatches horizontalmente */
+    align-items: center; /* Alineación vertical al centro */
+    flex-wrap: wrap; /* Permitir que los colores pasen a la siguiente línea */
+    gap: 5px; /* Espacio entre el botón "Todos" y los swatches, y entre swatches */
+}
+
+.price-filter-row,
+.color-filter-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+    background: #f5f5f5;
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+
+.price-filter-label,
+.color-filter-label {
+    font-weight: bold;
+    color: #87572b;
+    margin-right: 8px;
+}
+
+.filter-options-btn {
+    background: #dbba81;
+    color: #fff !important;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background 0.2s;
+    order: 0;
+}
+.filter-options-btn:hover,
+.filter-options-btn.active-filter {
+    background: #b79863;
+    color: #fff !important;
+}
+
+.price-filter input[type="range"] {
+    flex: 1 1 auto;
+    min-width: 120px;
+    accent-color: #dbba81;
+}
+
+.filter-color-options {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.color-swatch {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    display: inline-block;
+    cursor: pointer;
+    transition: border 0.2s, transform 0.2s;
+}
+.color-swatch.active-filter-color {
+    border: 2px solid #dbba81;
+    transform: scale(1.1);
+}
+.filtro-ropa[open] summary {
+    color: #87572b;
+}
+.filtro-ropa-opciones {
+    display: flex;
+    gap: 10px;
+    padding: 12px 0 4px 0;
+    flex-wrap: wrap;
+}
+.filtro-ropa-btn {
+    background: #f5f5f5;
+    color: #87572b;
+    border: 1.5px solid #dbba81;
+    border-radius: 6px;
+    padding: 7px 18px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s, border 0.2s;
+    font-size: 1rem;
+    box-shadow: 0 1px 2px #0001;
+}
+.filtro-ropa-btn:hover,
+.filtro-ropa-btn.active {
+    background: #dbba81;
+    color: #fff;
+    border-color: #87572b;
+}
+/* Filtros responsive para móvil */
+@media (max-width: 700px) {
+  .filter-horizontal {
+    flex-direction: column !important;
+    gap: 18px !important;
+    align-items: stretch !important;
+    width: 100%;
+  }
+  .filter-horizontal details,
+  .filter-horizontal .filtro-ropa {
+    width: 100%;
+    min-width: 0;
+  }
+  .filtro-ropa-opciones,
+  .price-filter,
+  .filter-color-options {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 10px 8px;
+  }
+  .filtro-ropa-btn,
+  .filter-options-btn,
+  .color-swatch {
+    min-width: 90px;
+    font-size: 1.05em;
+    padding: 10px 0;
+    text-align: center;
+    border-radius: 7px;
+  }
+  .color-swatch {
+    min-width: 36px;
+    min-height: 36px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid #dbba81;
+    box-sizing: border-box;
+    display: inline-block;
+  }
+  .price-filter input[type="range"] {
+    width: 100%;
+    margin: 0 0 8px 0;
+  }
+  .price-filter span {
+    display: block;
+    margin: 0;
+    margin-top: 6px;
+  }
+}
+
+/* Centrar títulos y flecha más pegada al nombre en móvil */
+/* Centrar títulos y flecha a la izquierda en móvil para todos los filtros */
+@media (max-width: 700px) {
+  .filter-horizontal details > summary,
+  .filtro-ropa > summary,
+  #detailsFiltroGenero > summary {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 1.13em;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    position: relative;
+    padding-left: 1.5em; /* Espacio para la flechita a la izquierda */
+    padding-right: 0;
+    list-style: none;
+  }
+  .filter-horizontal details > summary::after,
+  .filtro-ropa > summary::after,
+  #detailsFiltroGenero > summary::after {
+    content: "▼";
+    font-size: 1em;
+    color: #b79863;
+    position: absolute;
+    left: 0.1em;
+    top: 50%;
+    transform: translateY(-50%) rotate(0deg);
+    transition: transform 0.2s;
+    pointer-events: none;
+  }
+  .filter-horizontal details[open] > summary::after,
+  .filtro-ropa[open] > summary::after,
+  #detailsFiltroGenero[open] > summary::after {
+    transform: translateY(-50%) rotate(-180deg);
+  }
+}

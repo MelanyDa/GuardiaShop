@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prueba Chart.js</title>
+  <style>
+    .chart-area {
+      position: relative;
+      height: 350px;
+      width: 100%;
+    }
+    #graficaGananciasMes {
+      width: 100% !important;
+      height: 350px !important;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="chart-area">
+    <canvas id="graficaGananciasMes"></canvas>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const ctx = document.getElementById('graficaGananciasMes').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Enero', 'Febrero', 'Marzo'],
+        datasets: [{
+          label: 'Prueba',
+          data: [100, 200, 300],
+          borderColor: 'red',
+          borderWidth: 2
+        }]
+      }
+    });
+  </script>
+</body>
+</html>

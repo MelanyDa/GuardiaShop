@@ -1,0 +1,53 @@
+ /*-----------filtro de colores en ver mas-----------------------*/
+  
+ .color-options {
+ display: flex;
+ gap: 10px;
+ margin-top: 0.5rem;
+}
+
+.color-swatch {
+ width: 28px;
+ height: 28px;
+ border-radius: 50%;
+ border: 2px solid transparent;
+ box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+ cursor: pointer;
+ transition: transform 0.2s, border-color 0.2s;
+}
+
+.color-swatch:hover {
+ transform: scale(1.1);
+ border-color: #888;
+}
+
+.color-swatch.selected {
+ border-color: #333;
+ box-shadow: 0 0 0 2px white, 0 0 0 4px #333;
+}
+
+.modal-details label {
+ display: block;
+ margin-top: 1rem;
+ font-weight: bold;
+}
+.color-swatch {
+width: 28px;
+height: 28px;
+border-radius: 50%;
+border: 2px solid #000; /* Contorno negro */
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+cursor: pointer;
+transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.color-swatch:hover {
+transform: scale(1.1);
+box-shadow: 0 0 0 2px white, 0 0 0 4px #000;
+}
+
+.color-swatch.selected {
+box-shadow: 0 0 0 2px white, 0 0 0 4px #000;
+}
+
+  

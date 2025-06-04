@@ -1,0 +1,164 @@
+/* Icono carrito en la esquina */
+#cart-icon {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: #fff;
+    border: 2px solid #ccc;
+    padding: 8px 12px;
+    border-radius: 50px;
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+  }
+  
+  #cart-count {
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 3px 6px;
+    margin-left: 5px;
+    font-size: 12px;
+  }
+  
+  /* Carrito */
+  #cart {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    width: 300px;
+    background: #fff;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  #cart.hidden {
+    display: none;
+  }
+  
+  #cart h2 {
+    margin-top: 0;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  #cart-items {
+    list-style: none;
+    padding: 0;
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  #cart-items li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+  }
+  
+  .cart-item-name {
+    flex: 1;
+  }
+  
+  .cart-item-controls {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
+  
+  .cart-btn {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 3px 7px;
+    cursor: pointer;
+    font-size: 12px;
+  }
+  
+  .cart-btn:hover {
+    background: #0056b3;
+  }
+  
+  .btn-clear {
+    width: 100%;
+    background: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 8px 0;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
+  .btn-clear:hover {
+    background: #a71d2a;
+  }
+  
+  /* Icono pequeño agregar */
+  .cart-add {
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: 8px;
+  }
+  .btn-small {
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 10px;
+  padding: 6px 10px;
+  font-size: 12px;
+  background-color: #28a745;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-small:hover {
+  background-color: #1e7e34;
+}
+.btn-small {
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 10px;
+  padding: 6px 10px;
+  font-size: 12px;
+  background-color: #28a745;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-small:hover {
+  background-color: #1e7e34;
+}
+
+.btn-as-button {
+  display: block;
+  width: 100%;
+  text-align: center;
+  text-decoration: none; /* Quita la línea subrayada */
+  color: white;           /* Asegura que el texto sea blanco */
+  background-color: #b78732; /* Igual al botón rojo */
+  padding: 8px 0;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.btn-as-button:hover {
+  background-color: #1e7e34; /* Mismo color hover que el botón */
+}
+
