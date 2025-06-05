@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-06-2025 a las 03:03:09
+-- Tiempo de generación: 04-06-2025 a las 15:40:54
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.0.28
 
@@ -20,43 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `guardiashop`
 --
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `admin`
---
-
-CREATE TABLE `admin` (
-  `id_admin` int(11) NOT NULL,
-  `usuario` varchar(50) NOT NULL,
-  `contraseña` varchar(280) NOT NULL,
-  `rol` enum('admin','superadmin') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `carrito`
---
-
-CREATE TABLE `carrito` (
-  `id_carrito` int(11) NOT NULL,
-  `id_usuario` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `carrito_producto`
---
-
-CREATE TABLE `carrito_producto` (
-  `id_carrito_producto` int(11) NOT NULL,
-  `id_detalles_productos` int(11) NOT NULL,
-  `id_carrito` int(11) NOT NULL,
-  `cantidad` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -124,6 +87,15 @@ CREATE TABLE `compras` (
   `estado_compra` enum('solicitada','confirmada','enviada','recibida_parcial','recibida_completa','cancelada') NOT NULL DEFAULT 'solicitada'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `compras`
+--
+
+INSERT INTO `compras` (`id_compra`, `id_proveedor`, `fecha_compra`, `Número_de_factura`, `total_compra`, `estado_compra`) VALUES
+(1, 1, '2025-06-04 08:07:30', 'COMPRA-683F9C5230C27', 1250000.00, 'recibida_completa'),
+(2, 1, '2025-06-04 08:26:27', 'COMPRA-683FA0C386BFC', 3900000.00, 'recibida_completa'),
+(3, 4, '2025-06-04 08:27:00', 'COMPRA-683FA0E452656', 3100000.00, 'recibida_completa');
+
 -- --------------------------------------------------------
 
 --
@@ -139,13 +111,6 @@ CREATE TABLE `contactanos` (
   `estado` enum('Nuevo','Leído','Respondido','Cerrado') NOT NULL,
   `respuesta_admin` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `contactanos`
---
-
-INSERT INTO `contactanos` (`id_contacto`, `id_usuario`, `mensaje`, `correo`, `fecha`, `estado`, `respuesta_admin`) VALUES
-(4, 25, 'melany:\nvenden zapatos?', 'melanymorenom@gmail.com', '2025-06-03 07:24:58', 'Respondido', 'no vendemos zapatos\r\n');
 
 -- --------------------------------------------------------
 
@@ -173,31 +138,6 @@ INSERT INTO `copias_seguridad` (`id`, `nombre_archivo`, `fecha`, `tamano`, `frec
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `descuentos`
---
-
-CREATE TABLE `descuentos` (
-  `id_descuento` int(11) NOT NULL,
-  `nombre_descuento` varchar(100) NOT NULL,
-  `descripcion` text DEFAULT NULL,
-  `tipo_descuento` enum('porcentaje') NOT NULL DEFAULT 'porcentaje',
-  `valor_descuento` decimal(10,2) NOT NULL,
-  `codigo_cupon` varchar(50) DEFAULT NULL,
-  `fecha_inicio` datetime DEFAULT NULL COMMENT 'Fecha y hora de inicio de validez (NULL si siempre activo o activado manualmente)',
-  `fecha_fin` datetime DEFAULT NULL COMMENT 'Fecha y hora de fin de validez (NULL si no expira o desactivado manualmente)',
-  `activo` tinyint(1) NOT NULL DEFAULT 1,
-  `usos_maximos_global` int(11) DEFAULT NULL COMMENT 'Número máximo de veces que este descuento puede ser usado en total (NULL para ilimitado)',
-  `usos_actuales_global` int(11) NOT NULL DEFAULT 0 COMMENT 'Número de veces que este descuento ha sido usado en total',
-  `uso_unico_por_cliente` tinyint(1) NOT NULL DEFAULT 0 COMMENT 'TRUE si cada cliente solo puede usarlo una vez',
-  `monto_minimo_compra` decimal(10,2) DEFAULT NULL COMMENT 'Monto mínimo en el carrito para que aplique el descuento (NULL si no aplica)',
-  `aplica_a_producto_id` int(11) DEFAULT NULL COMMENT 'FK a productos.id_producto (si el descuento es para un producto específico)',
-  `es_por_cumpleanos` tinyint(1) NOT NULL DEFAULT 0 COMMENT 'TRUE si este es un descuento especial de cumpleaños',
-  `dias_validez_cumpleanos` int(3) DEFAULT NULL COMMENT 'Si es_por_cumpleanos, cuántos días antes/después es válido (ej. 7 días)'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='Tabla para gestionar descuentos y promociones';
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `detalles_compra`
 --
 
@@ -209,6 +149,15 @@ CREATE TABLE `detalles_compra` (
   `costo_unitario` decimal(10,2) NOT NULL,
   `subtotal` decimal(10,2) GENERATED ALWAYS AS (`cantidad_comprada` * `costo_unitario`) STORED
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `detalles_compra`
+--
+
+INSERT INTO `detalles_compra` (`id_detalle_compra`, `id_compra`, `id_detalles_productos`, `cantidad_comprada`, `costo_unitario`) VALUES
+(1, 1, 5, 10, 125000.00),
+(2, 2, 13, 30, 130000.00),
+(3, 3, 85, 20, 155000.00);
 
 -- --------------------------------------------------------
 
@@ -231,7 +180,8 @@ CREATE TABLE `detalles_factura_f` (
 
 INSERT INTO `detalles_factura_f` (`id_detalle_factura_f`, `id_factura_f`, `id_producto`, `cantidad`, `precio`, `subtotal`) VALUES
 (1, 3, 3, 10, 145000.00, 1450000.00),
-(2, 4, 3, 6, 145000.00, 870000.00);
+(2, 4, 3, 6, 145000.00, 870000.00),
+(3, 5, 3, 1, 155000.00, 155000.00);
 
 -- --------------------------------------------------------
 
@@ -253,16 +203,7 @@ CREATE TABLE `detalles_pedido` (
 --
 
 INSERT INTO `detalles_pedido` (`id_detalles_pedido`, `id_pedido`, `id_detalles_productos`, `cantidad`, `precio_unitario`) VALUES
-(81, 46, 23, 100, 140000.00),
-(82, 47, 43, 1, 148000.00),
-(83, 47, 7, 1, 135000.00),
-(84, 47, 181, 1, 140000.00),
-(85, 48, 14, 1, 130000.00),
-(86, 48, 42, 1, 138000.00),
-(98, 58, 47, 1, 148000.00),
-(99, 59, 43, 1, 148000.00),
-(102, 61, 23, 1, 140000.00),
-(103, 62, 47, 2, 148000.00);
+(105, 64, 38, 3, 138000.00);
 
 -- --------------------------------------------------------
 
@@ -289,7 +230,7 @@ INSERT INTO `detalles_productos` (`id_detalles_productos`, `id_producto`, `id_co
 (2, 1, 1, 2, 125000.00, 20, 5),
 (3, 1, 1, 3, 135000.00, 18, 5),
 (4, 1, 1, 4, 135000.00, 10, 5),
-(5, 1, 2, 1, 125000.00, 18, 5),
+(5, 1, 2, 1, 125000.00, 28, 5),
 (6, 1, 2, 2, 125000.00, 22, 5),
 (7, 1, 2, 3, 135000.00, 18, 5),
 (8, 1, 2, 4, 135000.00, 12, 5),
@@ -297,7 +238,7 @@ INSERT INTO `detalles_productos` (`id_detalles_productos`, `id_producto`, `id_co
 (10, 1, 3, 2, 125000.00, 15, 5),
 (11, 1, 3, 3, 135000.00, 14, 5),
 (12, 1, 3, 4, 135000.00, 8, 5),
-(13, 2, 2, 1, 130000.00, 20, 5),
+(13, 2, 2, 1, 130000.00, 50, 5),
 (14, 2, 2, 2, 130000.00, 25, 5),
 (15, 2, 2, 3, 140000.00, 22, 5),
 (16, 2, 2, 4, 140000.00, 15, 5),
@@ -311,7 +252,7 @@ INSERT INTO `detalles_productos` (`id_detalles_productos`, `id_producto`, `id_co
 (24, 2, 4, 4, 140000.00, 9, 5),
 (25, 3, 2, 1, 145000.00, 20, 5),
 (26, 3, 2, 2, 145000.00, 19, 5),
-(27, 3, 2, 3, 155000.00, 17, 5),
+(27, 3, 2, 3, 155000.00, 16, 5),
 (28, 3, 2, 4, 155000.00, 10, 5),
 (29, 3, 1, 1, 145000.00, 15, 5),
 (30, 3, 1, 2, 145000.00, 0, 5),
@@ -322,7 +263,7 @@ INSERT INTO `detalles_productos` (`id_detalles_productos`, `id_producto`, `id_co
 (35, 3, 3, 3, 155000.00, 11, 5),
 (36, 3, 3, 4, 155000.00, 7, 5),
 (37, 4, 1, 1, 138000.00, 18, 5),
-(38, 4, 1, 2, 138000.00, 21, 5),
+(38, 4, 1, 2, 138000.00, 18, 5),
 (39, 4, 1, 3, 148000.00, 19, 5),
 (40, 4, 1, 4, 148000.00, 12, 5),
 (41, 4, 2, 1, 138000.00, 20, 5),
@@ -369,7 +310,7 @@ INSERT INTO `detalles_productos` (`id_detalles_productos`, `id_producto`, `id_co
 (82, 10, 1, 2, 165000.00, 21, 5),
 (83, 10, 1, 3, 175000.00, 19, 5),
 (84, 10, 1, 4, 175000.00, 13, 5),
-(85, 11, 7, 1, 155000.00, 11, 5),
+(85, 11, 7, 1, 155000.00, 31, 5),
 (86, 11, 7, 2, 155000.00, 14, 5),
 (87, 11, 7, 3, 165000.00, 12, 5),
 (88, 11, 7, 4, 165000.00, 7, 5),
@@ -542,26 +483,6 @@ INSERT INTO `detalles_productos` (`id_detalles_productos`, `id_producto`, `id_co
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `devoluciones_cliente`
---
-
-CREATE TABLE `devoluciones_cliente` (
-  `id_devolucion_cliente` int(11) NOT NULL,
-  `id_pedido` int(11) NOT NULL,
-  `id_detalles_pedido` int(11) NOT NULL,
-  `cantidad_devuelta` int(11) NOT NULL,
-  `motivo` text DEFAULT NULL,
-  `fecha_solicitud` timestamp NOT NULL DEFAULT current_timestamp(),
-  `estado_devolucion` enum('Solicitada','Aprobada','Rechazada','Producto Recibido','Reembolsado','Cambio Enviado','Cerrada') NOT NULL DEFAULT 'Solicitada',
-  `fecha_actualizacion_estado` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `tipo_resolucion` enum('Reembolso','Cambio Producto') DEFAULT NULL,
-  `monto_reembolsado` decimal(10,2) DEFAULT NULL,
-  `notas_admin` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='Gestión de las devoluciones de productos por clientes';
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `direccion`
 --
 
@@ -583,25 +504,7 @@ CREATE TABLE `direccion` (
 --
 
 INSERT INTO `direccion` (`id_direccion`, `usuario_id`, `pais`, `direccion`, `direccion_adiccional`, `ciudad`, `departamento`, `codigo_postal`, `telefono`, `identificacion`) VALUES
-(6, 24, 'colombia', 'cascorba via cvi', 'san judas despues de la iglesia ', 'quibdo', 'choco', '2700001', 2147483647, '10776333'),
-(7, 25, 'colombia', 'buenos aires', 'san judas despues de la iglesia ', 'quibdo', 'choco', '2700001', 2147483647, '10999222333'),
-(8, 27, 'san', 'buenos aires', 'san judas', 'cortico', 'juan', '2700001', 2147483647, '109992222343'),
-(9, 25, 'colombia', 'buenos aires', 'san judas despues de la iglesia ', 'quibdo', 'choco', '2700001', 2147483647, '10999222333'),
-(10, 25, 'colombia', 'buenos aires', 'san judas despues de la iglesia ', 'quibdo', 'choco', '2700001', 2147483647, '10999222333'),
-(11, 27, 'san', 'buenos aires', 'san judas', 'cortico', 'juan', '2700001', 2147483647, '109992222343'),
-(12, 27, 'san', 'buenos aires', 'san judas', 'cortico', 'juan', '2700001', 2147483647, '109992222343'),
-(13, 27, 'san', 'buenos aires', 'san judas', 'cortico', 'juan', '2700001', 2147483647, '109992222343'),
-(14, 27, 'san', 'buenos aires', 'san judas', 'cortico', 'juan', '2700001', 2147483647, '109992222343'),
-(15, 27, 'san', 'buenos aires', 'san judas', 'cortico', 'juan', '2700001', 2147483647, '109992222343'),
-(16, 27, 'san', 'buenos aires', 'san judas', 'cortico', 'juan', '2700001', 2147483647, '109992222343'),
-(17, 24, 'colombia', 'cascorba via cvi', 'san judas despues de la iglesia ', 'quibdo', 'choco', '2700001', 2147483647, '10776333'),
-(18, 24, 'colombia', 'cascorba via cvi', 'san judas despues de la iglesia ', 'quibdo', 'choco', '2700001', 2147483647, '10776333'),
-(19, 24, 'colombia', 'cascorba via cvi', 'san judas despues de la iglesia ', 'quibdo', 'choco', '2700001', 2147483647, '10776333'),
-(20, 24, 'colombia', 'cascorba via cvi', 'san judas despues de la iglesia ', 'quibdo', 'choco', '2700001', 2147483647, '10776333'),
-(21, 24, 'colombia', 'cascorba via cvi', 'san judas despues de la iglesia ', 'quibdo', 'choco', '2700001', 2147483647, '10776333'),
-(22, 24, 'colombia', 'cascorba via cvi', 'san judas despues de la iglesia ', 'quibdo', 'choco', '2700001', 2147483647, '10776333'),
-(23, 24, 'colombia', 'cascorba via cvi', 'san judas despues de la iglesia ', 'quibdo', 'choco', '2700001', 2147483647, '10776333'),
-(24, 24, 'colombia', 'cascorba via cvi', 'san judas despues de la iglesia ', 'quibdo', 'choco', '2700001', 2147483647, '10776333');
+(26, 35, 'colombia', 'buenos aires parte baja', 'san judas despues de la iglesia ', 'quibdo', 'choco', '2700001', 2147483647, '10779222333');
 
 -- --------------------------------------------------------
 
@@ -632,11 +535,7 @@ CREATE TABLE `facturas_venta` (
 --
 
 INSERT INTO `facturas_venta` (`id_factura`, `id_pedido`, `numero_factura`, `fecha_emision`, `fecha_vencimiento`, `cliente_nombre_completo`, `cliente_direccion_fiscal`, `cliente_identificacion_fiscal`, `subtotal_base`, `total_impuestos`, `total_factura`, `estado_factura`, `metodo_pago_registrado`, `notas_factura`, `fecha_creacion_registro`) VALUES
-(29, 46, 'FAC-000046', '2025-06-03', '2025-07-03', 'Cliente', 'buenos aires, san judas', '109992222343', 14000000.00, 0.00, 14000000.00, 'Pagada', 'tarjeta', '', '2025-06-03 05:13:52'),
-(30, 47, 'FAC-000047', '2025-06-03', '2025-07-03', 'Cliente', 'buenos aires, san judas despues de la iglesia ', '10999222333', 423000.00, 0.00, 423000.00, 'Pagada', 'transferencia', '', '2025-06-03 06:18:06'),
-(35, 58, 'FAC-000058', '2025-06-03', '2025-07-03', 'Cliente', 'cascorba via cvi, san judas despues de la iglesia ', '10776333', 148000.00, 0.00, 148000.00, 'Pagada', 'paypal', '', '2025-06-03 15:27:23'),
-(37, 61, 'FAC-000061', '2025-06-03', '2025-07-03', 'Cliente', 'cascorba via cvi, san judas despues de la iglesia ', '10776333', 140000.00, 0.00, 140000.00, 'Pagada', 'paypal', '', '2025-06-03 18:00:48'),
-(38, 62, 'FAC-000062', '2025-06-03', '2025-07-03', 'Cliente', 'cascorba via cvi, san judas despues de la iglesia ', '10776333', 296000.00, 0.00, 296000.00, 'Pagada', 'transferencia', '', '2025-06-03 21:20:24');
+(39, 64, 'FAC-000064', '2025-06-04', '2025-07-04', 'Cliente', 'buenos aires parte baja, san judas despues de la iglesia ', '10779222333', 414000.00, 0.00, 414000.00, 'Pagada', 'paypal', '', '2025-06-04 13:05:41');
 
 -- --------------------------------------------------------
 
@@ -668,7 +567,8 @@ CREATE TABLE `factura_venta_f` (
 
 INSERT INTO `factura_venta_f` (`id_factura`, `numero_factura`, `fecha_emision`, `fecha_vencimiento`, `cliente_nombre_completo`, `cliente_direccion_fiscal`, `cliente_identificacion_fiscal`, `correo`, `subtotal_base`, `total_impuestos`, `total_factura`, `estado_factura`, `metodo_pago_registrado`, `notas_factura`, `fecha_creacion_registro`) VALUES
 (3, 'FAC-683f85704351d', '2025-06-04', '2025-07-04', 'luis', 'buenos aires', '2233333', 'david@gmial.com', 1450000.00, 231512.61, 1450000.00, 'Pagada', 'Efectivo', '', '2025-06-04 01:29:52'),
-(4, 'FAC-683f86385db5a', '2025-06-04', '2025-07-04', 'santiago', 'cabi', '34667', 'santi@gmail.com', 870000.00, 138907.56, 870000.00, 'Pagada', 'Efectivo', '', '2025-06-04 01:33:12');
+(4, 'FAC-683f86385db5a', '2025-06-04', '2025-07-04', 'santiago', 'cabi', '34667', 'santi@gmail.com', 870000.00, 138907.56, 870000.00, 'Pagada', 'Efectivo', '', '2025-06-04 01:33:12'),
+(5, 'FAC-684046a722407', '2025-06-04', '2025-07-04', 'lerhy', 'buenos aires', '2233333', 'lerhyalexander711@gmail.com', 155000.00, 24747.90, 155000.00, 'Pagada', 'Efectivo', '', '2025-06-04 15:14:15');
 
 -- --------------------------------------------------------
 
@@ -698,7 +598,12 @@ INSERT INTO `movimientos_inventario` (`id_movimiento`, `id_detalles_productos`, 
 (4, 47, 12, 'Venta', -2, 10, '2025-06-03 21:20:24', '62', NULL, NULL),
 (5, 25, 6, 'Venta', -10, -4, '2025-06-03 23:29:52', '3', NULL, NULL),
 (6, 25, 0, 'Venta', -6, -6, '2025-06-03 23:33:12', '4', NULL, NULL),
-(7, 25, 0, 'Compra', 20, 20, '2025-06-04 00:50:44', 'Compra manual', NULL, 145000.00);
+(7, 25, 0, 'Compra', 20, 20, '2025-06-04 00:50:44', 'Compra manual', NULL, 145000.00),
+(8, 5, 18, 'Compra', 10, 28, '2025-06-04 01:07:30', 'COMPRA-683F9C5230C27', NULL, 125000.00),
+(9, 13, 20, 'Compra', 30, 50, '2025-06-04 01:26:27', 'COMPRA-683FA0C386BFC', NULL, 130000.00),
+(10, 85, 11, 'Compra', 20, 31, '2025-06-04 01:27:00', 'COMPRA-683FA0E452656', NULL, 155000.00),
+(11, 38, 21, 'Venta', -3, 18, '2025-06-04 13:05:41', '64', NULL, NULL),
+(12, 27, 16, 'Venta', -1, 15, '2025-06-04 13:14:15', '5', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -721,12 +626,7 @@ CREATE TABLE `pago` (
 --
 
 INSERT INTO `pago` (`id_pago`, `fecha_pago`, `metodo_pago`, `id_pedido`, `estado_pago`, `monto`, `banco`) VALUES
-(42, '2025-06-03 05:13:52', 'tarjeta', 46, 'completado', 14000000.00, NULL),
-(43, '2025-06-03 06:18:06', 'transferencia', 47, 'completado', 423000.00, NULL),
-(47, '2025-06-03 15:27:22', 'paypal', 58, 'completado', 148000.00, NULL),
-(48, '2025-06-03 15:47:34', 'tarjeta', 59, 'fallido', 148000.00, 'Banco de Bogotá'),
-(50, '2025-06-03 18:00:48', 'paypal', 61, 'completado', 140000.00, NULL),
-(51, '2025-06-03 21:20:23', 'transferencia', 62, 'completado', 296000.00, 'bancolombia');
+(52, '2025-06-04 13:05:40', 'paypal', 64, 'completado', 414000.00, NULL);
 
 -- --------------------------------------------------------
 
@@ -747,13 +647,7 @@ CREATE TABLE `pedido` (
 --
 
 INSERT INTO `pedido` (`id_pedido`, `usuario_id`, `fecha_orden`, `total`, `estado`) VALUES
-(46, 27, '2025-06-03 15:35:18', 14000000.00, 'en camino'),
-(47, 25, '2025-06-03 17:10:59', 423000.00, 'en camino'),
-(48, 25, '2025-06-03 20:15:31', 268000.00, 'pendiente'),
-(58, 24, '2025-06-03 15:36:01', 148000.00, 'preparando'),
-(59, 24, '2025-06-03 15:47:34', 148000.00, 'fallido'),
-(61, 24, '2025-06-03 18:00:48', 140000.00, 'confirmado'),
-(62, 24, '2025-06-03 21:20:23', 296000.00, 'confirmado');
+(64, 35, '2025-06-04 13:05:40', 414000.00, 'confirmado');
 
 -- --------------------------------------------------------
 
@@ -776,27 +670,8 @@ CREATE TABLE `pedido_historial` (
 --
 
 INSERT INTO `pedido_historial` (`id_historial`, `id_pedido`, `estado_anterior`, `estado_nuevo`, `fecha_cambio`, `id_admin_cambio`, `notas`) VALUES
-(50, 46, NULL, 'pendiente', '2025-06-03 05:13:29', NULL, NULL),
-(51, 46, 'pendiente', 'confirmado', '2025-06-03 05:13:52', NULL, NULL),
-(52, 47, NULL, 'pendiente', '2025-06-03 06:14:53', NULL, NULL),
-(53, 47, 'pendiente', 'confirmado', '2025-06-03 06:18:06', NULL, NULL),
-(54, 48, NULL, 'pendiente', '2025-06-03 13:15:31', NULL, NULL),
-(64, 58, NULL, 'pendiente', '2025-06-03 15:27:10', NULL, NULL),
-(65, 58, 'pendiente', 'confirmado', '2025-06-03 15:27:22', NULL, NULL),
-(67, 46, 'confirmado', 'preparando', '2025-06-03 15:35:02', NULL, NULL),
-(68, 46, 'preparando', 'enviado', '2025-06-03 15:35:10', NULL, NULL),
-(69, 46, 'enviado', 'en camino', '2025-06-03 15:35:18', NULL, NULL),
-(70, 47, 'confirmado', 'preparando', '2025-06-03 15:35:26', NULL, NULL),
-(71, 47, 'preparando', 'preparando', '2025-06-03 15:35:30', NULL, NULL),
-(72, 47, 'preparando', 'enviado', '2025-06-03 15:35:45', NULL, NULL),
-(73, 58, 'confirmado', 'preparando', '2025-06-03 15:36:01', NULL, NULL),
-(74, 59, NULL, 'pendiente', '2025-06-03 15:46:58', NULL, NULL),
-(75, 59, 'pendiente', 'fallido', '2025-06-03 15:47:34', NULL, NULL),
-(76, 47, 'enviado', 'en camino', '2025-06-03 17:10:59', NULL, NULL),
-(79, 61, NULL, 'pendiente', '2025-06-03 18:00:35', NULL, NULL),
-(80, 61, 'pendiente', 'confirmado', '2025-06-03 18:00:48', NULL, NULL),
-(81, 62, NULL, 'pendiente', '2025-06-03 21:20:04', NULL, NULL),
-(82, 62, 'pendiente', 'confirmado', '2025-06-03 21:20:23', NULL, NULL);
+(84, 64, NULL, 'pendiente', '2025-06-04 13:05:28', NULL, NULL),
+(85, 64, 'pendiente', 'confirmado', '2025-06-04 13:05:40', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1027,7 +902,7 @@ CREATE TABLE `usuario` (
   `proveedor_registro` varchar(50) NOT NULL,
   `proveedor_id` int(50) NOT NULL,
   `fecha_registro` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `rol` enum('cliente') NOT NULL,
+  `rol` enum('cliente','admin','vendedor','super_admin') NOT NULL,
   `foto_perfil` varchar(255) DEFAULT NULL,
   `token` varchar(100) NOT NULL,
   `token_expira` varchar(100) DEFAULT NULL
@@ -1038,34 +913,14 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id`, `primer_nombre`, `segundo_nombre`, `primer_apellido`, `segundo_apellido`, `correo`, `contraseña`, `fecha_de_cumpleaños`, `proveedor_registro`, `proveedor_id`, `fecha_registro`, `rol`, `foto_perfil`, `token`, `token_expira`) VALUES
-(24, 'luz', 'yadira', 'moreno', 'perea', 'luz@hotmail.com', '$2y$10$loL/kyvuq1A0yfjCASFfG.KwW6S33zwe2ZBQAL5G8l7V7p08gIa.a', '1985-02-28', '', 0, '2025-06-03 00:41:05', 'cliente', 'uploads/perfil_24_1748911265.JPG', '', NULL),
-(25, 'Melany', '', 'Moreno', '', 'melanymorenom@gmail.com', '$2y$10$xeqiE2MEs5ymRxhQsukrUexhFjefvcppnZMfIVX2UsvBH80/JenWC', '0000-00-00', 'google', 2147483647, '2025-06-03 06:00:11', 'cliente', 'uploads/perfil_25_1748930411.jpg', '', NULL),
-(27, 'Eddy', 'santiago', 'berrio', 'moreno', 'santi@gmail.com', '$2y$10$O6bdUBBIsK5g6SDwO9yZlu7T80G.6y1LR7lHrfuZm1b7YZCwL7Iee', '0000-00-00', '', 0, '2025-06-03 05:12:15', 'cliente', 'uploads/perfil_27_1748927535.jpg', '', NULL);
+(32, 'melany ', 'carmen', 'moreno', 'carmen', 'morenomelany10@gmail.com', '$2y$10$fXuONB69LLP490NDlX4UI.kB9Ae5ofcGo/LVOVAVBVFfw6JI8AICe', '2005-09-25', '', 0, '2025-06-04 12:22:33', 'admin', NULL, '', NULL),
+(33, 'lerhy', 'alexander', 'jordan', 'serna', 'lerhyalexander711@gmail.com', '$2y$10$tdHB.23upCmG7Wu40/Vp9.ZZXYkgcTVY3voRpwrM/Ll91G/MOkKoi', '2003-11-12', '', 0, '2025-06-04 12:22:29', 'super_admin', NULL, '', NULL),
+(34, 'yurleni', 'danessa', 'moreno', 'olaya', 'yurle@gmail.com', '$2y$10$OxHqso6iA1j0u0IOUi6mI.8WhEbw8cAvcpb/QVmdOwjQOJyYj2mYC', '2005-05-23', '', 0, '2025-06-04 12:22:17', 'vendedor', NULL, '', NULL),
+(35, 'Melany', '', 'Moreno', '', 'melanymorenom@gmail.com', '', '0000-00-00', 'google', 2147483647, '2025-06-04 12:59:33', 'cliente', NULL, '', NULL);
 
 --
 -- Índices para tablas volcadas
 --
-
---
--- Indices de la tabla `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id_admin`);
-
---
--- Indices de la tabla `carrito`
---
-ALTER TABLE `carrito`
-  ADD PRIMARY KEY (`id_carrito`),
-  ADD KEY `id_usuario` (`id_usuario`);
-
---
--- Indices de la tabla `carrito_producto`
---
-ALTER TABLE `carrito_producto`
-  ADD PRIMARY KEY (`id_carrito_producto`),
-  ADD KEY `id_carrito` (`id_carrito`),
-  ADD KEY `id_detalles_productos` (`id_detalles_productos`);
 
 --
 -- Indices de la tabla `categoria`
@@ -1100,16 +955,6 @@ ALTER TABLE `copias_seguridad`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `descuentos`
---
-ALTER TABLE `descuentos`
-  ADD PRIMARY KEY (`id_descuento`),
-  ADD UNIQUE KEY `codigo_cupon` (`codigo_cupon`),
-  ADD KEY `idx_codigo_cupon` (`codigo_cupon`),
-  ADD KEY `idx_fechas_activo` (`activo`,`fecha_inicio`,`fecha_fin`),
-  ADD KEY `aplica_a_producto_id` (`aplica_a_producto_id`);
-
---
 -- Indices de la tabla `detalles_compra`
 --
 ALTER TABLE `detalles_compra`
@@ -1141,14 +986,6 @@ ALTER TABLE `detalles_productos`
   ADD KEY `id_color` (`id_color`),
   ADD KEY `id_producto` (`id_producto`),
   ADD KEY `id_tallas` (`id_tallas`);
-
---
--- Indices de la tabla `devoluciones_cliente`
---
-ALTER TABLE `devoluciones_cliente`
-  ADD PRIMARY KEY (`id_devolucion_cliente`),
-  ADD KEY `idx_id_pedido` (`id_pedido`),
-  ADD KEY `devoluciones_cliente_ibfk_2` (`id_detalles_pedido`);
 
 --
 -- Indices de la tabla `direccion`
@@ -1250,24 +1087,6 @@ ALTER TABLE `usuario`
 --
 
 --
--- AUTO_INCREMENT de la tabla `admin`
---
-ALTER TABLE `admin`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `carrito`
---
-ALTER TABLE `carrito`
-  MODIFY `id_carrito` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `carrito_producto`
---
-ALTER TABLE `carrito_producto`
-  MODIFY `id_carrito_producto` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
@@ -1283,7 +1102,7 @@ ALTER TABLE `color_productos`
 -- AUTO_INCREMENT de la tabla `compras`
 --
 ALTER TABLE `compras`
-  MODIFY `id_compra` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_compra` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `contactanos`
@@ -1292,28 +1111,22 @@ ALTER TABLE `contactanos`
   MODIFY `id_contacto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT de la tabla `descuentos`
---
-ALTER TABLE `descuentos`
-  MODIFY `id_descuento` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de la tabla `detalles_compra`
 --
 ALTER TABLE `detalles_compra`
-  MODIFY `id_detalle_compra` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_detalle_compra` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `detalles_factura_f`
 --
 ALTER TABLE `detalles_factura_f`
-  MODIFY `id_detalle_factura_f` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_detalle_factura_f` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `detalles_pedido`
 --
 ALTER TABLE `detalles_pedido`
-  MODIFY `id_detalles_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
+  MODIFY `id_detalles_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
 
 --
 -- AUTO_INCREMENT de la tabla `detalles_productos`
@@ -1322,52 +1135,46 @@ ALTER TABLE `detalles_productos`
   MODIFY `id_detalles_productos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=286;
 
 --
--- AUTO_INCREMENT de la tabla `devoluciones_cliente`
---
-ALTER TABLE `devoluciones_cliente`
-  MODIFY `id_devolucion_cliente` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de la tabla `direccion`
 --
 ALTER TABLE `direccion`
-  MODIFY `id_direccion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_direccion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT de la tabla `facturas_venta`
 --
 ALTER TABLE `facturas_venta`
-  MODIFY `id_factura` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id_factura` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT de la tabla `factura_venta_f`
 --
 ALTER TABLE `factura_venta_f`
-  MODIFY `id_factura` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_factura` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `movimientos_inventario`
 --
 ALTER TABLE `movimientos_inventario`
-  MODIFY `id_movimiento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_movimiento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `pago`
 --
 ALTER TABLE `pago`
-  MODIFY `id_pago` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id_pago` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT de la tabla `pedido`
 --
 ALTER TABLE `pedido`
-  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT de la tabla `pedido_historial`
 --
 ALTER TABLE `pedido_historial`
-  MODIFY `id_historial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
+  MODIFY `id_historial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
@@ -1403,24 +1210,11 @@ ALTER TABLE `talla_productos`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- Restricciones para tablas volcadas
 --
-
---
--- Filtros para la tabla `carrito`
---
-ALTER TABLE `carrito`
-  ADD CONSTRAINT `carrito_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`);
-
---
--- Filtros para la tabla `carrito_producto`
---
-ALTER TABLE `carrito_producto`
-  ADD CONSTRAINT `carrito_producto_ibfk_1` FOREIGN KEY (`id_carrito`) REFERENCES `carrito` (`id_carrito`),
-  ADD CONSTRAINT `carrito_producto_ibfk_2` FOREIGN KEY (`id_detalles_productos`) REFERENCES `detalles_productos` (`id_detalles_productos`);
 
 --
 -- Filtros para la tabla `compras`
@@ -1433,12 +1227,6 @@ ALTER TABLE `compras`
 --
 ALTER TABLE `contactanos`
   ADD CONSTRAINT `contactanos_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `descuentos`
---
-ALTER TABLE `descuentos`
-  ADD CONSTRAINT `descuentos_ibfk_1` FOREIGN KEY (`aplica_a_producto_id`) REFERENCES `productos` (`id_producto`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `detalles_compra`
@@ -1470,13 +1258,6 @@ ALTER TABLE `detalles_productos`
   ADD CONSTRAINT `detalles_productos_ibfk_3` FOREIGN KEY (`id_tallas`) REFERENCES `talla_productos` (`id_talla`);
 
 --
--- Filtros para la tabla `devoluciones_cliente`
---
-ALTER TABLE `devoluciones_cliente`
-  ADD CONSTRAINT `devoluciones_cliente_ibfk_1` FOREIGN KEY (`id_pedido`) REFERENCES `pedido` (`id_pedido`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `devoluciones_cliente_ibfk_2` FOREIGN KEY (`id_detalles_pedido`) REFERENCES `detalles_pedido` (`id_detalles_pedido`) ON UPDATE CASCADE;
-
---
 -- Filtros para la tabla `direccion`
 --
 ALTER TABLE `direccion`
@@ -1492,8 +1273,7 @@ ALTER TABLE `facturas_venta`
 -- Filtros para la tabla `movimientos_inventario`
 --
 ALTER TABLE `movimientos_inventario`
-  ADD CONSTRAINT `movimientos_inventario_ibfk_1` FOREIGN KEY (`id_detalles_productos`) REFERENCES `detalles_productos` (`id_detalles_productos`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `movimientos_inventario_ibfk_2` FOREIGN KEY (`id_admin`) REFERENCES `admin` (`id_admin`) ON DELETE SET NULL ON UPDATE CASCADE;
+  ADD CONSTRAINT `movimientos_inventario_ibfk_1` FOREIGN KEY (`id_detalles_productos`) REFERENCES `detalles_productos` (`id_detalles_productos`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `pago`
@@ -1511,8 +1291,7 @@ ALTER TABLE `pedido`
 -- Filtros para la tabla `pedido_historial`
 --
 ALTER TABLE `pedido_historial`
-  ADD CONSTRAINT `pedido_historial_ibfk_1` FOREIGN KEY (`id_pedido`) REFERENCES `pedido` (`id_pedido`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `pedido_historial_ibfk_2` FOREIGN KEY (`id_admin_cambio`) REFERENCES `admin` (`id_admin`) ON DELETE SET NULL ON UPDATE CASCADE;
+  ADD CONSTRAINT `pedido_historial_ibfk_1` FOREIGN KEY (`id_pedido`) REFERENCES `pedido` (`id_pedido`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `productos`
