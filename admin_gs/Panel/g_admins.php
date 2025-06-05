@@ -1,11 +1,12 @@
 <?php
-/*
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+// Restringir acceso solo a admin, super_admin o vendedor
 if (!isset($_SESSION['admin_rol']) || !in_array($_SESSION['admin_rol'], ['admin', 'super_admin', 'vendedor'])) {
-    header('Location: ../login.php');
+    header('Location: /guardiashop/login/login.php');
     exit();
 }
-*/
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -18,6 +19,9 @@ if (!isset($_SESSION['admin_rol']) || !in_array($_SESSION['admin_rol'], ['admin'
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         .usuarios-header {
@@ -150,7 +154,7 @@ if (!isset($_SESSION['admin_rol']) || !in_array($_SESSION['admin_rol'], ['admin'
                                             <select class="form-control" name="rol" required>
                                             <option value="admin">Admin</option>
                                             <option value="vendedor">vendedor</option>
-                                            <option value="superadmin">Super Admin</option>
+                                            <option value="super_admin">Super Admin</option>
                                         </select>
                                         </div>
                                         <div class="form-group">
@@ -207,7 +211,7 @@ if (!isset($_SESSION['admin_rol']) || !in_array($_SESSION['admin_rol'], ['admin'
                                             <select class="form-control" name="rol" id="edit_rol" required>
                                             <option value="admin">Admin</option>
                                             <option value="vendedor">vendedor</option>
-                                            <option value="superadmin">Super Admin</option>
+                                            <option value="super_admin">Super Admin</option>
                                         </select>
                                         </div>
                                         <div class="form-group">
