@@ -1,11 +1,14 @@
 <?php
-/*
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+// Restringir acceso solo a admin, super_admin o vendedor
 if (!isset($_SESSION['admin_rol']) || !in_array($_SESSION['admin_rol'], ['admin', 'super_admin', 'vendedor'])) {
-    header('Location: /guardiashop/admin_gs/login.php');
+    header('Location: /guardiashop/login/login.php');
     exit();
 }
-*/
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -22,6 +25,9 @@ if (!isset($_SESSION['admin_rol']) || !in_array($_SESSION['admin_rol'], ['admin'
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         .facturas-header {
             display: flex;
