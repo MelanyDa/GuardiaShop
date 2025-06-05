@@ -459,7 +459,7 @@ require_once 'login/conexion.php';
     </div>
 
     <!-- Modal de Modificar Producto en Carrito (el más completo) -->
-    <div id="modal-modificar-carrito" class="modal-bg"> {/* No necesita display:none inline, se controla por JS */}
+    <div id="modal-modificar-carrito" class="modal-bg"> 
       <div class="modal-content">
         <span class="close-modal" onclick="cerrarModalModificarCarrito()">×</span>
         <h3>Modificar producto</h3>
