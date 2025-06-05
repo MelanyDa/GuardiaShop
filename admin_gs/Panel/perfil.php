@@ -1,12 +1,16 @@
 <?php
-session_start();
-if (!isset($_SESSION['id'])) {
-    header('Location: login.php');
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+// Restringir acceso solo a admin, super_admin o vendedor
+if (!isset($_SESSION['admin_rol']) || !in_array($_SESSION['admin_rol'], ['admin', 'super_admin', 'vendedor'])) {
+    header('Location: /guardiashop/login/login.php');
     exit();
 }
+
 include $_SERVER['DOCUMENT_ROOT'].'/guardiashop/admin_gs/Panel/conexion.php';
 
-$id_usuario = $_SESSION['id'];
+$id_usuario = isset($_SESSION['admin_id']) ? $_SESSION['admin_id'] : (isset($_SESSION['usuario_id']) ? $_SESSION['usuario_id'] : null);
 $mensaje = '';
 
 // Actualizar datos si se envió el formulario
@@ -40,6 +44,8 @@ $usuario = $result->fetch_assoc();
     <meta charset="UTF-8">
     <title>Mi Perfil</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <style>
         .perfil-container { max-width: 600px; margin: 40px auto; }
         .perfil-avatar { width: 100px; height: 100px; object-fit: cover; border-radius: 50%; border: 3px solid #007bff; margin-bottom: 20px; }
@@ -50,7 +56,7 @@ $usuario = $result->fetch_assoc();
         <h2 class="mb-4 text-center">Mi Perfil</h2>
         <?php echo $mensaje; ?>
         <div class="text-center">
-            <img src="<?php echo isset($_SESSION['user_icon']) ? $_SESSION['user_icon'] : '/guardiashop/admin_gs/Panel/img/user.png'; ?>" alt="Avatar" class="perfil-avatar">
+            <img src="<?php echo isset($_SESSION['user_icon']) ? '/' . ltrim($_SESSION['user_icon'], '/') : '/guardiashop/admin_gs/Panel/img/user.png'; ?>" alt="Avatar" class="perfil-avatar">
         </div>
         <form method="post" class="mt-4">
             <div class="form-row">
@@ -84,6 +90,7 @@ $usuario = $result->fetch_assoc();
             <button type="submit" class="btn btn-primary btn-block">Guardar cambios</button>
         </form>
         <div class="mt-4 text-center">
+            
             <a href="/guardiashop/admin_gs/Panel/index.php" class="btn btn-secondary">Volver al inicio</a>
         </div>
     </div>
