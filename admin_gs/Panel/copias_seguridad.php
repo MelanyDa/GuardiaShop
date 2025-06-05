@@ -1,11 +1,15 @@
 <?php
-/*
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+// Restringir acceso solo a admin, super_admin o vendedor
 if (!isset($_SESSION['admin_rol']) || !in_array($_SESSION['admin_rol'], ['admin', 'super_admin', 'vendedor'])) {
-    header('Location: ../login.php');
+    header('Location: /guardiashop/login/login.php');
     exit();
 }
-*/
+?>
+<?php
+
 require_once($_SERVER['DOCUMENT_ROOT'].'/guardiashop/admin_gs/Panel/conexion.php');
 require_once __DIR__ . '/libs_backup/vendor/autoload.php';
 use Ifsnop\Mysqldump as Mysqldump;
@@ -93,35 +97,6 @@ if (isset($_GET['descargar']) && is_numeric($_GET['descargar'])) {
 
 // 5. Obtener todas las copias de seguridad
 $copias = $conn->query("SELECT * FROM copias_seguridad ORDER BY fecha DESC");
-
-// 6. Guardar frecuencia automática
-if (isset($_POST['frecuencia'])) {
-    $frecuencia = $_POST['frecuencia'];
-    $dias_personalizados = ($frecuencia === 'personalizada' && !empty($_POST['dias_personalizados'])) ? intval($_POST['dias_personalizados']) : null;
-    // Si ya existe el registro, actualiza; si no, inserta
-    $res = $conn->query("SELECT id FROM configuracion_backup WHERE id=1");
-    if ($res && $res->num_rows > 0) {
-        $stmt = $conn->prepare("UPDATE configuracion_backup SET frecuencia=?, dias_personalizados=? WHERE id=1");
-        $stmt->bind_param('si', $frecuencia, $dias_personalizados);
-        $stmt->execute();
-        $stmt->close();
-    } else {
-        $stmt = $conn->prepare("INSERT INTO configuracion_backup (id, frecuencia, dias_personalizados) VALUES (1, ?, ?)");
-        $stmt->bind_param('si', $frecuencia, $dias_personalizados);
-        $stmt->execute();
-        $stmt->close();
-    }
-    echo "<script>Swal.fire('¡Guardado!', 'Frecuencia automática actualizada.', 'success');</script>";
-}
-
-// 7. Obtener frecuencia actual
-$frecuencia_actual = 'diaria';
-$dias_personalizados_actual = '';
-$res = $conn->query("SELECT frecuencia, dias_personalizados FROM configuracion_backup WHERE id=1");
-if ($res && $row = $res->fetch_assoc()) {
-    $frecuencia_actual = $row['frecuencia'];
-    $dias_personalizados_actual = $row['dias_personalizados'];
-}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -138,6 +113,9 @@ if ($res && $row = $res->fetch_assoc()) {
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         .modern-header {
             background: linear-gradient(90deg, #2c4926 60%, #6bbf59 100%);
@@ -223,17 +201,6 @@ if ($res && $row = $res->fetch_assoc()) {
                     </div>
                     <div class="card modern-card shadow mb-4">
                         <div class="card-header py-3 d-flex flex-column flex-md-row justify-content-between align-items-center">
-                            <!-- <form class="form-inline mb-2 mb-md-0" method="post" action="">
-                                <label for="frecuencia" class="mr-2 font-weight-bold">Frecuencia automática:</label>
-                                <select name="frecuencia" id="frecuencia" class="form-control mr-2">
-                                    <option value="diaria" <?php if($frecuencia_actual=='diaria') echo 'selected'; ?>>Diaria</option>
-                                    <option value="semanal" <?php if($frecuencia_actual=='semanal') echo 'selected'; ?>>Semanal</option>
-                                    <option value="mensual" <?php if($frecuencia_actual=='mensual') echo 'selected'; ?>>Mensual</option>
-                                    <option value="personalizada" <?php if($frecuencia_actual=='personalizada') echo 'selected'; ?>>Personalizada</option>
-                                </select>
-                                <input type="number" name="dias_personalizados" id="dias_personalizados" class="form-control mr-2" style="width:120px; display:<?php echo ($frecuencia_actual=='personalizada')?'block':'none'; ?>;" min="1" placeholder="Cada X días" value="<?php echo htmlspecialchars($dias_personalizados_actual); ?>">
-                                <button type="submit" class="btn btn-outline-primary">Guardar</button>
-                            </form> -->
                             <form method="post" action="">
                                 <button type="submit" name="backup_manual" class="btn btn-success font-weight-bold shadow-sm" data-toggle="tooltip" data-placement="top" title="Generar copia ahora">
                                     <i class="fas fa-cloud-download-alt mr-1"></i> Realizar copia manual
@@ -300,14 +267,6 @@ if ($res && $row = $res->fetch_assoc()) {
                 "searching": false,
                 "lengthChange": false,
                 "info": false
-            });
-            // Mostrar input personalizado solo si se elige "personalizada"
-            $('#frecuencia').on('change', function() {
-                if($(this).val() === 'personalizada') {
-                    $('#dias_personalizados').show();
-                } else {
-                    $('#dias_personalizados').hide();
-                }
             });
             // Tooltips
             $('[data-toggle="tooltip"]').tooltip();
