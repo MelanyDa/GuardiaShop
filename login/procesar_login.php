@@ -6,11 +6,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $correo = $_POST['correo'];
     $contraseña = $_POST['contraseña'];
 
-    $stmt = $conn->prepare("SELECT id, primer_nombre, primer_apellido, contraseña FROM usuario WHERE correo = ?");
+    $stmt = $conn->prepare("SELECT id, primer_nombre, primer_apellido, contraseña, rol FROM usuario WHERE correo = ?");
     $stmt->bind_param("s", $correo);
     $stmt->execute();
     $stmt->store_result();
-    $stmt->bind_result($id, $primer_nombre, $primer_apellido, $contraseña_hash);
+    $stmt->bind_result($id, $primer_nombre, $primer_apellido, $contraseña_hash, $rol);
 
     if ($stmt->num_rows > 0) {
         $stmt->fetch();
@@ -18,6 +18,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['usuario_nombre'] = $primer_nombre . ' ' . $primer_apellido;
             $_SESSION['usuario_id'] = $id;
             $_SESSION['id_usuario'] = $id; // <-- AGREGA ESTA LÍNEA
+            // --- LÓGICA PARA ADMIN ---
+            if (in_array($rol, ['admin', 'super_admin', 'vendedor'])) {
+                $_SESSION['admin_rol'] = $rol;
+                $_SESSION['admin_usuario'] = $primer_nombre . ' ' . $primer_apellido;
+                $_SESSION['admin_id'] = $id;
+                $_SESSION['admin_email'] = $correo;
+                // Puedes redirigir directamente al panel de admin si quieres:
+                echo "\n    <!DOCTYPE html>\n    <html lang='es'>\n    <head>\n        <meta charset='UTF-8'>\n        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>\n    </head>\n    <body>\n    <script>\n        Swal.fire({\n            icon: 'success',\n            title: '¡Bienvenido!',\n            text: 'Acceso de administrador exitoso.',\n            confirmButtonColor: '#2c4926'\n        }).then(() => {\n            window.location.href = '../admin_gs/Panel/index.php';\n        });\n    </script>\n    </body>\n    </html>\n    ";
+                $stmt->close();
+                $conn->close();
+                exit();
+            }
+            // --- FIN LÓGICA ADMIN ---
         // Redirección inteligente
         if (!empty($_POST['redirect'])) {
             header("Location: ../" . ltrim($_POST['redirect'], '/'));
