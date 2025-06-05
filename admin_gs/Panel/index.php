@@ -1,12 +1,14 @@
 <?php
-/*
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+// Restringir acceso solo a admin, super_admin o vendedor
 if (!isset($_SESSION['admin_rol']) || !in_array($_SESSION['admin_rol'], ['admin', 'super_admin', 'vendedor'])) {
-    header('Location: /guardiashop/admin_gs/login.php');
+    header('Location: /guardiashop/login/login.php');
     exit();
 }
-*/
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
  
@@ -32,7 +34,9 @@ if (!isset($_SESSION['admin_rol']) || !in_array($_SESSION['admin_rol'], ['admin'
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 <!-- Font Awesome (para íconos) -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <style>
     .select-mes-custom {
         border-radius: 20px;
@@ -151,8 +155,7 @@ if (!isset($_SESSION['admin_rol']) || !in_array($_SESSION['admin_rol'], ['admin'
                             <span class="dashboard-icon mr-2"><i class="fas fa-tachometer-alt"></i></span>
                             <span class="dashboard-title">Dashboard</span>
                         </h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" style="background-color: #2c4926;"><i
-                                class="fas fa-download fa-sm text-white-50"></i>Generar reporte</a>
+                        
                     </div>
 
                     <!-- NUEVAS TARJETAS DE MÉTRICAS -->
